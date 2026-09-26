@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://djog74fbgvxpn"]
+
+[ext_resource type="PackedScene" uid="uid://lrvbb45nvo6s" path="res://enemies/ranger_enemy/ranger_projectile.tscn" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="2_0hol4"]
+[ext_resource type="PackedScene" uid="uid://bg3drywje2c2q" path="res://enemies/ranger_enemy/ranger_enemy.tscn" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=1102427850]
+
+[node name="RangerProjectile" parent="." unique_id=850189275 instance=ExtResource("2_0e48y")]
+position = Vector2(296, 180)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=347524717]
+position = Vector2(924, 212)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1864977465]
+texture = ExtResource("2_0hol4")
+
+[node name="RangerEnemy" parent="." unique_id=1902833144 node_paths=PackedStringArray("player") instance=ExtResource("2_epypp")]
+player = NodePath("../CharacterBody2D")

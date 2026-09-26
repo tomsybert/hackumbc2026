@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://lrvbb45nvo6s"]
+
+[ext_resource type="Script" uid="uid://q17pt23cj4fn" path="res://enemies/ranger_enemy/ranger_projectile.gd" id="1_1ec0n"]
+[ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="1_y8e5e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5aci"]
+height = 66.0
+
+[node name="RangerProjectile" type="Node2D" unique_id=850189275]
+script = ExtResource("1_1ec0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=605876429]
+rotation = -1.5707964
+scale = Vector2(0.140625, 0.484375)
+texture = ExtResource("1_y8e5e")
+
+[node name="Killzone" type="Area2D" parent="." unique_id=663142587]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=383950024]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_m5aci")
