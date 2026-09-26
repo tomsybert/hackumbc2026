@@ -7,10 +7,31 @@ class_name Player
 var maxSpeed : float = 250.0
 var acceleration : float = 3000.0
 var life : int = 3
+var dead = false
+
+func _ready():
+	GlobalController.player = self
 
 func _physics_process(delta: float) -> void:
-	var input_vector = Vector2.ZERO
-	input_vector = Input.get_vector("game_left","game_right","game_up","game_down")
-	velocity = velocity.move_toward(input_vector * maxSpeed, acceleration * delta)
-	move_and_slide()
-	
+	if !dead:
+		var input_vector = Vector2.ZERO
+		input_vector = Input.get_vector("game_left","game_right","game_up","game_down")
+		velocity = velocity.move_toward(input_vector * maxSpeed, acceleration * delta)
+		move_and_slide()
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if!dead:
+		if body.is_in_group("Enemy"):
+			life-=1
+			body.queue_free()
+		if life<=0:
+			die()
+
+func die():
+	self.visible=false
+	dead=true
+	$DeathAnimator.play("Die")
+
+func die_paused():
+	get_tree().paused=true
+	ui.game_over()

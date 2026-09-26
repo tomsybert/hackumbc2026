@@ -6,7 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqhl4"]
 radius = 32.0
 
-[node name="UpgradePickup" type="Node2D" unique_id=1274544811]
+[sub_resource type="CircleShape2D" id="CircleShape2D_57reg"]
+radius = 32.0
+
+[node name="UpgradePickup" type="StaticBody2D" unique_id=176196583]
+collision_layer = 0
+collision_mask = 10
 script = ExtResource("1_rmo8j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=230331003]
@@ -18,5 +23,8 @@ texture = ExtResource("2_57reg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2129201187]
 shape = SubResource("CircleShape2D_jqhl4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1160496060]
+shape = SubResource("CircleShape2D_57reg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

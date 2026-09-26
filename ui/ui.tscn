@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dofgmxhr4b44q" path="res://ui/ui.gd" id="1_nb4k0"]
 [ext_resource type="Script" uid="uid://j1wgs2nac8l4" path="res://ui/upgrade_screen.gd" id="2_ks8t7"]
 [ext_resource type="FontFile" uid="uid://bk1uuvjou7e1b" path="res://util/darumadropone/DarumadropOne-Regular.ttf" id="3_wl5ax"]
+[ext_resource type="StyleBox" uid="uid://cdeqnpqp5yq48" path="res://ui/flat_style.tres" id="4_vkava"]
+[ext_resource type="Texture2D" uid="uid://dmcg4jkxmj3b6" path="res://ui/ui_border.png" id="5_tf0e0"]
 
 [sub_resource type="Animation" id="Animation_vkava"]
 length = 0.001
@@ -404,6 +406,138 @@ _data = {
 &"show": SubResource("Animation_wl5ax")
 }
 
+[sub_resource type="Animation" id="Animation_obcwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 256)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Continue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bo1jx"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(0, 256), Vector2(0, 128)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Continue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 0.2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gycre"]
+_data = {
+&"RESET": SubResource("Animation_obcwv"),
+&"die": SubResource("Animation_bo1jx")
+}
+
 [node name="UI" type="CanvasLayer" unique_id=1649795704]
 script = ExtResource("1_nb4k0")
 
@@ -440,46 +574,207 @@ layout_mode = 0
 offset_left = 192.0
 offset_top = 64.0
 offset_right = 448.0
-offset_bottom = 447.99988
+offset_bottom = 447.99976
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_wl5ax")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_vkava")
+theme_override_styles/pressed = ExtResource("4_vkava")
+theme_override_styles/hover = ExtResource("4_vkava")
+theme_override_styles/disabled = ExtResource("4_vkava")
+theme_override_styles/focus = ExtResource("4_vkava")
 disabled = true
 text = "Speed Up"
 autowrap_mode = 2
 icon_alignment = 1
 vertical_icon_alignment = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UpgradeScreen/Upgrade1" unique_id=595899660]
+modulate = Color(1, 0.78431374, 0.78431374, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_top = -1.5258789e-05
+offset_right = 1024.0
+offset_bottom = 1536.0002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_tf0e0")
+region_rect = Rect2(19.820435, 62.155014, 957.9258, 880.82007)
+patch_margin_left = 356
+patch_margin_top = 337
+patch_margin_right = 385
+patch_margin_bottom = 317
 
 [node name="Upgrade2" type="Button" parent="UpgradeScreen" unique_id=744741203]
 layout_mode = 0
 offset_left = 512.0
 offset_top = 192.0
 offset_right = 768.0
-offset_bottom = 575.99963
+offset_bottom = 575.9995
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_wl5ax")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_vkava")
+theme_override_styles/pressed = ExtResource("4_vkava")
+theme_override_styles/hover = ExtResource("4_vkava")
+theme_override_styles/disabled = ExtResource("4_vkava")
+theme_override_styles/focus = ExtResource("4_vkava")
 disabled = true
 text = "Speed Up"
 autowrap_mode = 2
 icon_alignment = 1
 vertical_icon_alignment = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UpgradeScreen/Upgrade2" unique_id=533139665]
+modulate = Color(0.78431374, 1, 0.78431374, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_top = -1.5258789e-05
+offset_right = 1023.9999
+offset_bottom = 1536.0002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_tf0e0")
+region_rect = Rect2(19.820435, 62.155014, 957.9258, 880.82007)
+patch_margin_left = 356
+patch_margin_top = 337
+patch_margin_right = 385
+patch_margin_bottom = 317
 
 [node name="Upgrade3" type="Button" parent="UpgradeScreen" unique_id=1725857559]
 layout_mode = 0
 offset_left = 832.0
 offset_top = 192.0
 offset_right = 1088.0001
-offset_bottom = 575.9999
+offset_bottom = 575.99976
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_wl5ax")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_vkava")
+theme_override_styles/pressed = ExtResource("4_vkava")
+theme_override_styles/hover = ExtResource("4_vkava")
+theme_override_styles/disabled = ExtResource("4_vkava")
+theme_override_styles/focus = ExtResource("4_vkava")
 disabled = true
 text = "Speed Up"
 autowrap_mode = 2
 icon_alignment = 1
 vertical_icon_alignment = 0
 
+[node name="NinePatchRect" type="NinePatchRect" parent="UpgradeScreen/Upgrade3" unique_id=244176962]
+modulate = Color(0.78431374, 0.78431374, 1, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_top = -1.5258789e-05
+offset_right = 1023.9999
+offset_bottom = 1536.0002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_tf0e0")
+region_rect = Rect2(19.820435, 62.155014, 957.9258, 880.82007)
+patch_margin_left = 356
+patch_margin_top = 337
+patch_margin_right = 385
+patch_margin_bottom = 317
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UpgradeScreen" unique_id=1416311210]
 libraries/ = SubResource("AnimationLibrary_vkava")
+
+[node name="GameOver" type="Control" parent="." unique_id=698617468]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameOver" unique_id=981812463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameOver" unique_id=1226837299]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1280.0
+offset_bottom = 384.0002
+theme_override_fonts/normal_font = ExtResource("3_wl5ax")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake]Game Over"
+
+[node name="Continue" type="Button" parent="GameOver" unique_id=1928078559]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 512.0
+offset_top = 384.0
+offset_right = 768.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.9490196, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_wl5ax")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_vkava")
+theme_override_styles/pressed = ExtResource("4_vkava")
+theme_override_styles/hover = ExtResource("4_vkava")
+theme_override_styles/disabled = ExtResource("4_vkava")
+theme_override_styles/focus = ExtResource("4_vkava")
+text = "Continue"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GameOver/Continue" unique_id=1296695910]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_top = -1.5258789e-05
+offset_right = 1450.6667
+offset_bottom = 725.33325
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_tf0e0")
+region_rect = Rect2(19.820435, 62.155014, 957.9258, 880.82007)
+patch_margin_left = 356
+patch_margin_top = 337
+patch_margin_right = 385
+patch_margin_bottom = 317
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver" unique_id=173335261]
+libraries/ = SubResource("AnimationLibrary_gycre")
 
 [connection signal="pressed" from="UpgradeScreen/Upgrade1" to="UpgradeScreen" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="UpgradeScreen/Upgrade2" to="UpgradeScreen" method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="UpgradeScreen/Upgrade3" to="UpgradeScreen" method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="GameOver/Continue" to="." method="_on_continue_pressed"]

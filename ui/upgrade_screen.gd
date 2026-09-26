@@ -1,6 +1,6 @@
 extends Control
 
-var upgrade_text : Array[String] = ["Attack Speed Up","+1 Life","Speed Increase","Fireball Speed"]
+var upgrade_text : Array[String] = ["Damage Up","+1 Life","Speed Increase","Fireball Speed"]
 var upgrade_pool : Array[String] = ["uid://ch5g1dg0wtkbh","uid://dab1ojx8rxjf","uid://bulgadvnoep3y","uid://j18mj6tfq3r"]
 var upg_index : Array[int]
 
