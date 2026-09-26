@@ -1,8 +1,38 @@
 [gd_scene format=3 uid="uid://bd2y6a1kfxa8g"]
 
 [ext_resource type="PackedScene" uid="uid://cbn2khrlbh7bm" path="res://player/player.tscn" id="1_rn1uv"]
+[ext_resource type="PackedScene" uid="uid://disdjs3wyk2s6" path="res://player/upgrades/upgrade_pickup.tscn" id="2_eepu7"]
+[ext_resource type="PackedScene" uid="uid://bu46ui2edodh0" path="res://ui/ui.tscn" id="3_qerkk"]
 
 [node name="Level" type="Node2D" unique_id=125674357]
 
-[node name="Player" parent="." unique_id=526105913 instance=ExtResource("1_rn1uv")]
+[node name="Player" parent="." unique_id=526105913 node_paths=PackedStringArray("ui") instance=ExtResource("1_rn1uv")]
 position = Vector2(600, 280)
+ui = NodePath("../UI")
+
+[node name="UpgradePickup" parent="." unique_id=1274544811 instance=ExtResource("2_eepu7")]
+position = Vector2(360, 224)
+
+[node name="UpgradePickup2" parent="." unique_id=862958527 instance=ExtResource("2_eepu7")]
+position = Vector2(624, 152)
+
+[node name="UpgradePickup3" parent="." unique_id=1837813694 instance=ExtResource("2_eepu7")]
+position = Vector2(928, 176)
+
+[node name="UpgradePickup4" parent="." unique_id=414586163 instance=ExtResource("2_eepu7")]
+position = Vector2(1080, 360)
+
+[node name="UpgradePickup5" parent="." unique_id=1190295083 instance=ExtResource("2_eepu7")]
+position = Vector2(944, 472)
+
+[node name="UpgradePickup6" parent="." unique_id=1543264053 instance=ExtResource("2_eepu7")]
+position = Vector2(712, 600)
+
+[node name="UpgradePickup7" parent="." unique_id=207498201 instance=ExtResource("2_eepu7")]
+position = Vector2(352, 568)
+
+[node name="UpgradePickup8" parent="." unique_id=593314834 instance=ExtResource("2_eepu7")]
+position = Vector2(208, 416)
+
+[node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
+player = NodePath("../Player")

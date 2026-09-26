@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dab1ojx8rxjf"]
+
+[ext_resource type="Script" uid="uid://dkyvqkdq1lq1" path="res://player/upgrades/upg_life_up.gd" id="1_7ewm2"]
+
+[node name="UpgLifeUp" type="Node2D" unique_id=1568890809]
+script = ExtResource("1_7ewm2")

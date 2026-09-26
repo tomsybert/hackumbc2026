@@ -1,8 +1,7 @@
 extends Upgrade
 
 func Ready() -> void:
-	manager.player.maxSpeed+=100
-	manager.player.acceleration+=10000
+	manager.player.life+=1
 	pass
 	
 func Update(_delta : float) -> void:

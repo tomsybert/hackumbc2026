@@ -1,0 +1,24 @@
+{
+  "name": "Darumadrop One",
+  "family": "Darumadrop One",
+  "description": "Darumdrop is a flavorful handwritten font inspired by Japanese handwriting and \"Daruma Otoshi\" which is a Japanese folk craft game. To contribute to the project, visit github.com/ManiackersDesign/darumadrop",
+  "author": "Maniackers Design",
+  "website": "https://github.com/ManiackersDesign/darumadrop",
+  "category": "Display",
+  "tags": [
+    "display",
+    "google"
+  ],
+  "languages": [
+    "en",
+    "es",
+    "ja"
+  ],
+  "styles": [
+    "Regular"
+  ],
+  "formats": [
+    "ttf"
+  ],
+  "license": "SIL Open Font License 1.1"
+}

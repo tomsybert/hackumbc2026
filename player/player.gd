@@ -1,7 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
+@onready var manager = $UpgradeManager
+@onready var attacker = $Attacker
+@export var ui : UI
 var maxSpeed : float = 250.0
 var acceleration : float = 3000.0
+var life : int = 3
 
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO

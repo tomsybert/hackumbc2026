@@ -4,10 +4,10 @@ class_name UpgradeManager
 var upgrades : Array[Upgrade]
 @onready var player = $".."
 
-func _process(_delta) -> void:
-	#TODO REMOVE DEBUG
-	if Input.is_action_just_pressed("game_debug"):
-		give_upgrade("uid://bulgadvnoep3y")
+func _physics_process(delta) -> void:
+	for upgrade in upgrades:
+		if upgrade.has_update:
+			upgrade.Update(delta)
 
 func give_upgrade(upgrade_uid : String):
 	var upg = load(upgrade_uid).instantiate()
