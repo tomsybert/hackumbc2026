@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 var health = 5.0
 var speed = 10000.0
+var radius_distance = 500.0
 
 
 func _ready() -> void:
@@ -12,6 +13,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if player:
-		velocity = position.direction_to(player.position) * speed * delta
-	
-	move_and_slide()
+		if position.distance_to(player.position) < radius_distance:
+			pass
+		else:
+			velocity = position.direction_to(player.position) * speed * delta
+			move_and_slide()

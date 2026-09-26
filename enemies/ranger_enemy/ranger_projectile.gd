@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var player : CharacterBody2D
+var player : CharacterBody2D
 
 var speed = 100.0
 var velocity : Vector2 = Vector2.ZERO

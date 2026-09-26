@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtnnprp8g0pgm" path="res://enemies/ranger_enemy/ranger_enemy.gd" id="1_2gw1t"]
 [ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="2_wkyxo"]
+[ext_resource type="Script" uid="uid://t2hxjcur5rfu" path="res://enemies/ranger_enemy/attacker.gd" id="3_5gwha"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uks5v"]
 animations = [{
@@ -15,15 +16,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5aci"]
-size = Vector2(128, 128)
+size = Vector2(50, 82)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m5aci"]
-radius = 63.03174
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
+radius = 23.0
+height = 72.0
 
 [node name="RangerEnemy" type="CharacterBody2D" unique_id=1902833144]
 script = ExtResource("1_2gw1t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95885103]
+scale = Vector2(0.40625, 0.640625)
 sprite_frames = SubResource("SpriteFrames_uks5v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1132013413]
@@ -32,4 +35,7 @@ shape = SubResource("RectangleShape2D_m5aci")
 [node name="Killzone" type="Area2D" parent="." unique_id=141991636]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=784852832]
-shape = SubResource("CircleShape2D_m5aci")
+shape = SubResource("CapsuleShape2D_epypp")
+
+[node name="Attacker" type="Node2D" parent="." unique_id=1198227002]
+script = ExtResource("3_5gwha")
