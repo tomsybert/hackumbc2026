@@ -1,38 +1,178 @@
 [gd_scene format=3 uid="uid://bd2y6a1kfxa8g"]
 
 [ext_resource type="PackedScene" uid="uid://cbn2khrlbh7bm" path="res://player/player.tscn" id="1_rn1uv"]
-[ext_resource type="PackedScene" uid="uid://disdjs3wyk2s6" path="res://player/upgrades/upgrade_pickup.tscn" id="2_eepu7"]
 [ext_resource type="PackedScene" uid="uid://bu46ui2edodh0" path="res://ui/ui.tscn" id="3_qerkk"]
+[ext_resource type="PackedScene" uid="uid://bl8q73t5ga60l" path="res://environments/tree_cluster_1.tscn" id="3_uqs87"]
+[ext_resource type="PackedScene" uid="uid://yyr4trpkrhtb" path="res://environments/tree_cluster_2.tscn" id="4_xk8d6"]
+[ext_resource type="PackedScene" uid="uid://d1mj568sci5rl" path="res://environments/tree_cluster_3.tscn" id="5_eb0c7"]
+[ext_resource type="PackedScene" uid="uid://c2xaqmxr7u5py" path="res://environments/castle.tscn" id="6_uqs87"]
 
 [node name="Level" type="Node2D" unique_id=125674357]
 
 [node name="Player" parent="." unique_id=526105913 node_paths=PackedStringArray("ui") instance=ExtResource("1_rn1uv")]
-position = Vector2(600, 280)
 ui = NodePath("../UI")
 
-[node name="UpgradePickup" parent="." unique_id=1274544811 instance=ExtResource("2_eepu7")]
-position = Vector2(360, 224)
-
-[node name="UpgradePickup2" parent="." unique_id=862958527 instance=ExtResource("2_eepu7")]
-position = Vector2(624, 152)
-
-[node name="UpgradePickup3" parent="." unique_id=1837813694 instance=ExtResource("2_eepu7")]
-position = Vector2(928, 176)
-
-[node name="UpgradePickup4" parent="." unique_id=414586163 instance=ExtResource("2_eepu7")]
-position = Vector2(1080, 360)
-
-[node name="UpgradePickup5" parent="." unique_id=1190295083 instance=ExtResource("2_eepu7")]
-position = Vector2(944, 472)
-
-[node name="UpgradePickup6" parent="." unique_id=1543264053 instance=ExtResource("2_eepu7")]
-position = Vector2(712, 600)
-
-[node name="UpgradePickup7" parent="." unique_id=207498201 instance=ExtResource("2_eepu7")]
-position = Vector2(352, 568)
-
-[node name="UpgradePickup8" parent="." unique_id=593314834 instance=ExtResource("2_eepu7")]
-position = Vector2(208, 416)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1496290031]
 
 [node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
 player = NodePath("../Player")
+
+[node name="Trees" type="Node2D" parent="." unique_id=1561230347]
+
+[node name="TreeCluster1" parent="Trees" unique_id=1143310058 instance=ExtResource("3_uqs87")]
+position = Vector2(1920, -128)
+
+[node name="TreeCluster2" parent="Trees" unique_id=1548821671 instance=ExtResource("4_xk8d6")]
+position = Vector2(1856, -448)
+
+[node name="TreeCluster3" parent="Trees" unique_id=1390043474 instance=ExtResource("5_eb0c7")]
+position = Vector2(1856, -768)
+
+[node name="TreeCluster4" parent="Trees" unique_id=814324783 instance=ExtResource("4_xk8d6")]
+position = Vector2(1728, -1024)
+
+[node name="TreeCluster5" parent="Trees" unique_id=341910070 instance=ExtResource("5_eb0c7")]
+position = Vector2(1600, -1280)
+
+[node name="TreeCluster6" parent="Trees" unique_id=579269587 instance=ExtResource("4_xk8d6")]
+position = Vector2(1408, -1472)
+
+[node name="TreeCluster7" parent="Trees" unique_id=1223647205 instance=ExtResource("3_uqs87")]
+position = Vector2(1152, -1728)
+
+[node name="TreeCluster8" parent="Trees" unique_id=534527989 instance=ExtResource("4_xk8d6")]
+position = Vector2(896, -1984)
+
+[node name="TreeCluster9" parent="Trees" unique_id=1078899490 instance=ExtResource("5_eb0c7")]
+position = Vector2(576, -2048)
+
+[node name="TreeCluster10" parent="Trees" unique_id=87013870 instance=ExtResource("3_uqs87")]
+position = Vector2(320, -2240)
+
+[node name="TreeCluster11" parent="Trees" unique_id=379284629 instance=ExtResource("5_eb0c7")]
+position = Vector2(0, -2240)
+
+[node name="TreeCluster12" parent="Trees" unique_id=77178239 instance=ExtResource("3_uqs87")]
+position = Vector2(-320, -2240)
+
+[node name="TreeCluster13" parent="Trees" unique_id=1502873440 instance=ExtResource("5_eb0c7")]
+position = Vector2(-576, -2112)
+
+[node name="TreeCluster14" parent="Trees" unique_id=808839751 instance=ExtResource("3_uqs87")]
+position = Vector2(-896, -2176)
+
+[node name="TreeCluster15" parent="Trees" unique_id=1028046520 instance=ExtResource("5_eb0c7")]
+position = Vector2(-1024, -1920)
+
+[node name="TreeCluster16" parent="Trees" unique_id=879925858 instance=ExtResource("4_xk8d6")]
+position = Vector2(-1280, -1856)
+
+[node name="TreeCluster17" parent="Trees" unique_id=1382759637 instance=ExtResource("5_eb0c7")]
+position = Vector2(-1600, -1728)
+
+[node name="TreeCluster18" parent="Trees" unique_id=1338084806 instance=ExtResource("5_eb0c7")]
+position = Vector2(-1664, -1472)
+
+[node name="TreeCluster19" parent="Trees" unique_id=1525005360 instance=ExtResource("3_uqs87")]
+position = Vector2(-1856, -1216)
+
+[node name="TreeCluster20" parent="Trees" unique_id=816203444 instance=ExtResource("4_xk8d6")]
+position = Vector2(-1984, -960)
+
+[node name="TreeCluster21" parent="Trees" unique_id=2008598918 instance=ExtResource("5_eb0c7")]
+position = Vector2(-2176, -704)
+
+[node name="TreeCluster22" parent="Trees" unique_id=256103906 instance=ExtResource("4_xk8d6")]
+position = Vector2(-2176, -384)
+
+[node name="TreeCluster23" parent="Trees" unique_id=1217112556 instance=ExtResource("3_uqs87")]
+position = Vector2(-2304, -128)
+
+[node name="TreeCluster24" parent="Trees" unique_id=504241113 instance=ExtResource("5_eb0c7")]
+position = Vector2(-2240, 192)
+
+[node name="TreeCluster25" parent="Trees" unique_id=683357496 instance=ExtResource("4_xk8d6")]
+position = Vector2(-2048, 448)
+
+[node name="TreeCluster26" parent="Trees" unique_id=424840930 instance=ExtResource("3_uqs87")]
+position = Vector2(-2048, 704)
+
+[node name="TreeCluster27" parent="Trees" unique_id=1211651509 instance=ExtResource("4_xk8d6")]
+position = Vector2(-1920, 1024)
+
+[node name="TreeCluster28" parent="Trees" unique_id=1900629992 instance=ExtResource("3_uqs87")]
+position = Vector2(-1664, 1152)
+
+[node name="TreeCluster29" parent="Trees" unique_id=1435320855 instance=ExtResource("4_xk8d6")]
+position = Vector2(-1536, 1472)
+
+[node name="TreeCluster30" parent="Trees" unique_id=756828003 instance=ExtResource("5_eb0c7")]
+position = Vector2(-1280, 1536)
+
+[node name="TreeCluster31" parent="Trees" unique_id=1070577151 instance=ExtResource("5_eb0c7")]
+position = Vector2(-1024, 1664)
+
+[node name="TreeCluster32" parent="Trees" unique_id=689075360 instance=ExtResource("3_uqs87")]
+position = Vector2(-704, 1856)
+
+[node name="TreeCluster33" parent="Trees" unique_id=705235283 instance=ExtResource("4_xk8d6")]
+position = Vector2(-384, 1792)
+
+[node name="TreeCluster34" parent="Trees" unique_id=895064373 instance=ExtResource("5_eb0c7")]
+position = Vector2(-192, 1920)
+
+[node name="TreeCluster35" parent="Trees" unique_id=1387954942 instance=ExtResource("4_xk8d6")]
+position = Vector2(128, 1792)
+
+[node name="TreeCluster36" parent="Trees" unique_id=261681135 instance=ExtResource("3_uqs87")]
+position = Vector2(448, 1856)
+
+[node name="TreeCluster37" parent="Trees" unique_id=2107741508 instance=ExtResource("4_xk8d6")]
+position = Vector2(768, 1728)
+
+[node name="TreeCluster38" parent="Trees" unique_id=1514143479 instance=ExtResource("3_uqs87")]
+position = Vector2(1024, 1536)
+
+[node name="TreeCluster39" parent="Trees" unique_id=778372875 instance=ExtResource("5_eb0c7")]
+position = Vector2(1344, 1344)
+
+[node name="TreeCluster40" parent="Trees" unique_id=961639373 instance=ExtResource("4_xk8d6")]
+position = Vector2(1536, 1088)
+
+[node name="TreeCluster41" parent="Trees" unique_id=71718442 instance=ExtResource("3_uqs87")]
+position = Vector2(1728, 832)
+
+[node name="TreeCluster42" parent="Trees" unique_id=162930894 instance=ExtResource("4_xk8d6")]
+position = Vector2(1856, 576)
+
+[node name="TreeCluster43" parent="Trees" unique_id=1028313799 instance=ExtResource("5_eb0c7")]
+position = Vector2(2048, 256)
+
+[node name="TreeCluster44" parent="Trees" unique_id=797151928 instance=ExtResource("3_uqs87")]
+position = Vector2(1792, 64)
+
+[node name="Castles" type="Node2D" parent="." unique_id=1811759817]
+
+[node name="Castle" parent="Castles" unique_id=504995226 instance=ExtResource("6_uqs87")]
+position = Vector2(0, -1536)
+
+[node name="Castle2" parent="Castles" unique_id=993688673 instance=ExtResource("6_uqs87")]
+position = Vector2(1024, -1024)
+
+[node name="Castle3" parent="Castles" unique_id=646076136 instance=ExtResource("6_uqs87")]
+position = Vector2(1536, 0)
+
+[node name="Castle4" parent="Castles" unique_id=253067392 instance=ExtResource("6_uqs87")]
+position = Vector2(1024, 1024)
+
+[node name="Castle5" parent="Castles" unique_id=812486682 instance=ExtResource("6_uqs87")]
+position = Vector2(0, 1536)
+
+[node name="Castle6" parent="Castles" unique_id=1677450852 instance=ExtResource("6_uqs87")]
+position = Vector2(-1024, 1024)
+
+[node name="Castle7" parent="Castles" unique_id=603121064 instance=ExtResource("6_uqs87")]
+position = Vector2(-1536, 0)
+
+[node name="Castle8" parent="Castles" unique_id=1192562128 instance=ExtResource("6_uqs87")]
+position = Vector2(-1024, -1024)

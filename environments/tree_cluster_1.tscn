@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bl8q73t5ga60l"]
+
+[ext_resource type="PackedScene" uid="uid://hjwyqw34rdc6" path="res://environments/tree.tscn" id="1_svduf"]
+
+[node name="TreeCluster1" type="Node2D" unique_id=1143310058]
+
+[node name="Tree" parent="." unique_id=2020497772 instance=ExtResource("1_svduf")]
+position = Vector2(64, 64)
+
+[node name="Tree2" parent="." unique_id=1717061136 instance=ExtResource("1_svduf")]
+position = Vector2(256, 128)
+
+[node name="Tree3" parent="." unique_id=1828544156 instance=ExtResource("1_svduf")]
+position = Vector2(128, 192)
+
+[node name="Tree4" parent="." unique_id=1920257503 instance=ExtResource("1_svduf")]
+position = Vector2(256, 256)

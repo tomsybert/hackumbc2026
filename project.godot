@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="HackUMBC2026"
-run/main_scene="uid://bd2y6a1kfxa8g"
+run/main_scene="uid://b0maylxmgq4k1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalController="*uid://c2ymsxevyigui"
 
 [display]
 
@@ -21,6 +25,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+Enemy=""
 
 [input]
 
@@ -60,6 +68,7 @@ game_debug={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="World"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Castle"
 
 [physics]
 

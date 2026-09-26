@@ -1,9 +1,10 @@
 extends Node2D
 
 var attack = preload("uid://b3ltl83fxacwv")
-var attack_cooldown : float = 1.0
+var attack_cooldown : float = 0.05
 var current_attack_cooldown : float = 0
-var bullet_speed : float = 400
+var bullet_speed : float = 300
+var damage : float = 0.1
 
 func _physics_process(delta: float) -> void:
 	#Aiming
@@ -15,6 +16,7 @@ func _physics_process(delta: float) -> void:
 		bullet.global_position = self.global_position
 		bullet.rotation = self.rotation
 		bullet.speed = bullet_speed
+		bullet.damage=damage
 		current_attack_cooldown=attack_cooldown
 		$"..".get_parent().add_child(bullet)
 	if current_attack_cooldown>0:
