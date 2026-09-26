@@ -8,3 +8,4 @@ func _physics_process(_delta: float) -> void:
 	arrow.rotation = self.rotation
 	$"..".get_parent().add_child(arrow)
 	arrow.player = $"..".player
+	print("WOWIE: ", $"..".player)
