@@ -3,15 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://tfxp7k0cyteo" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://c5j7iis4bk66k" path="res://player/attacker.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://2rsdtkailmad" path="res://player/upgrades/upgrade_manager.gd" id="4_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqhl4"]
-size = Vector2(80, 80)
+size = Vector2(128, 64)
 
 [node name="Player" type="CharacterBody2D" unique_id=526105913]
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1106159868]
-scale = Vector2(0.75, 0.75)
+position = Vector2(0, 1.4305115e-06)
+scale = Vector2(1, 0.5)
 texture = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469720684]
@@ -19,3 +21,6 @@ shape = SubResource("RectangleShape2D_jqhl4")
 
 [node name="Attacker" type="Node2D" parent="." unique_id=1867637124]
 script = ExtResource("3_g1dw6")
+
+[node name="UpgradeManager" type="Node" parent="." unique_id=373433661]
+script = ExtResource("4_yw30f")
