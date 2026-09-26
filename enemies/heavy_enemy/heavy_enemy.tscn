@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnysclctk00us"]
+
+[ext_resource type="Script" uid="uid://b3kjq67ks1qx8" path="res://enemies/heavy_enemy/heavy_enemy.gd" id="1_u4son"]
+[ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="2_oks1o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uks5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oks1o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5aci"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m5aci"]
+radius = 63.03174
+
+[node name="HeavyEnemy" type="CharacterBody2D" unique_id=1902833144]
+script = ExtResource("1_u4son")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95885103]
+sprite_frames = SubResource("SpriteFrames_uks5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1132013413]
+shape = SubResource("RectangleShape2D_m5aci")
+
+[node name="Killzone" type="Area2D" parent="." unique_id=141991636]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=784852832]
+shape = SubResource("CircleShape2D_m5aci")
