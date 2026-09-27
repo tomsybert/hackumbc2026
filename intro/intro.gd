@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 		advance_texture.visible = true
 	
 	if textbox_index > textbox_array.size() - 2:
-		get_tree().change_scene_to_file("res://environments/level.tscn")
+		get_tree().change_scene_to_file("uid://bd2y6a1kfxa8g")
 	
 	textbox.visible_characters = visible_characters
 	textbox.text = textbox_array[textbox_index]
