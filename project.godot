@@ -13,6 +13,9 @@ config_version=5
 config/name="HackUMBC2026"
 run/main_scene="uid://b0maylxmgq4k1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(1, 0.9019608, 0.81960785, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://bj6aa3t3eof5q"
 config/icon="res://icon.svg"
 
 [autoload]
