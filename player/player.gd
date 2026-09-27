@@ -38,6 +38,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 
 func die():
 	dead=true
+	$Floaty.stop()
 	$DeathAnimator.stop()
 	$DeathAnimator.play("Die")
 

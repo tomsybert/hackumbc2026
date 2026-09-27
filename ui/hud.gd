@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+class_name Hud
 
 @onready var heart = preload("uid://cagsli5fg8xe5")
 @onready var heart_container = $Hearts/HeartContainer
@@ -26,3 +26,6 @@ func _process(_delta: float) -> void:
 		prev_life = GlobalController.player.life
 	score = GlobalController.player.score
 	money_counter.text = "[tornado]$" + str(snappedf(score, 0.01))
+
+func game_over():
+	$MoneyCounter.visible=false
