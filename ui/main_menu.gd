@@ -19,4 +19,3 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
 
 	$Transitioner.start_transit("uid://dvc2vbqbor6dt")
-
