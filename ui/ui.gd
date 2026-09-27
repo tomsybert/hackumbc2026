@@ -14,9 +14,11 @@ func pause(state:bool):
 
 func _ready():
 	$GameOver.visible=false
+	GlobalController.ongoing=true
 	
 func game_over():
 	hud.game_over()
+	GlobalController.ongoing=false
 	$GameOver/AnimationPlayer.play("die")
 	var amnt = hud.score
 	$GameOver/RichTextLabel2.text = "[center]You collected [wave]$" + str(snappedf(amnt, 0.01)) + "[/wave] in royalties!"
