@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dvc2vbqbor6dt"]
+
+[ext_resource type="FontFile" uid="uid://bk1uuvjou7e1b" path="res://util/darumadropone/DarumadropOne-Regular.ttf" id="1_fpmxm"]
+[ext_resource type="Script" uid="uid://3gfu2afbrp4b" path="res://intro/intro.gd" id="1_vjsr4"]
+[ext_resource type="Texture2D" uid="uid://b0gcgfbetiwmq" path="res://ui/advance_arrow.png" id="2_jkt4n"]
+
+[node name="Intro" type="Control" unique_id=1732385517]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjsr4")
+
+[node name="BlackBars" type="Control" parent="." unique_id=973389210]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="BlackBars" unique_id=553428743]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BlackBars" unique_id=1298502460]
+layout_mode = 0
+offset_left = 1112.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="BlackBars" unique_id=56659472]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 491.0
+offset_right = 1112.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="BlackBars" unique_id=1260911179]
+layout_mode = 0
+offset_left = 168.0
+offset_right = 1112.0
+offset_bottom = 85.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextBox" type="Control" parent="." unique_id=1129065047]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextBoxLabel" type="RichTextLabel" parent="TextBox" unique_id=222547729]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 505.0
+offset_right = 1030.0
+offset_bottom = 665.0
+theme_override_fonts/normal_font = ExtResource("1_fpmxm")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Holy shit this is a test!!! "
+scroll_active = false
+
+[node name="AdvanceTexture" type="TextureRect" parent="TextBox" unique_id=1820787452]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 509.0
+offset_right = 1102.0
+offset_bottom = 561.0
+texture = ExtResource("2_jkt4n")
+expand_mode = 1
