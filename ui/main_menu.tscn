@@ -5,8 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://j5ihrb7raqnk" path="res://ui/menu_background.png" id="2_wk0pr"]
 [ext_resource type="StyleBox" uid="uid://cdeqnpqp5yq48" path="res://ui/flat_style.tres" id="3_rmr83"]
 [ext_resource type="Texture2D" uid="uid://dmcg4jkxmj3b6" path="res://ui/ui_border.png" id="3_wk0pr"]
+
 [ext_resource type="Theme" uid="uid://rxsiiwhsd8xp" path="res://slider_theme.tres" id="6_ei257"]
 [ext_resource type="Texture2D" uid="uid://beglmj7ijqn8v" path="res://ui/bar_comp.png" id="7_p8ri8"]
+
+[ext_resource type="PackedScene" uid="uid://c6mqi3f0xxkm4" path="res://ui/transitioner.tscn" id="6_ei257"]
+
 
 [node name="MainMenu" type="Control" unique_id=185032467]
 layout_mode = 3
@@ -48,7 +52,7 @@ bbcode_enabled = true
 text = "[tornado radius=3]Seamus Despres
 Tom Sybert
 Jacob Fruchey
-Alex Lastname
+Alex Hazoume
 -- HackUMBC 2026 --"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -155,6 +159,8 @@ bbcode_enabled = true
 text = "[tornado radius=3]SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
+[node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("6_ei257")]
+layout_mode = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="music_slider" to="." method="_on_music_slider_value_changed"]

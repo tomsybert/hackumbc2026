@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cty2ia35bheqp" path="res://ui/advance_arrow_spritesheet.png" id="3_pxqmo"]
 [ext_resource type="Texture2D" uid="uid://bdh8xsgplay8n" path="res://intro/roy_unhappy.jpg" id="4_a5lnx"]
 [ext_resource type="AudioStream" uid="uid://cx1fjhmavxnyu" path="res://ui/advance_text_sfx.wav" id="4_pxqmo"]
+[ext_resource type="PackedScene" uid="uid://c6mqi3f0xxkm4" path="res://ui/transitioner.tscn" id="8_6ct58"]
 
 [sub_resource type="Animation" id="Animation_a5lnx"]
 length = 0.001
@@ -314,4 +315,10 @@ frame_progress = 0.8892001
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=266912733]
 stream = ExtResource("4_pxqmo")
+
 bus = &"SFX"
+
+
+[node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_6ct58")]
+layout_mode = 1
+

@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://yyr4trpkrhtb" path="res://environments/tree_cluster_2.tscn" id="4_xk8d6"]
 [ext_resource type="PackedScene" uid="uid://d1mj568sci5rl" path="res://environments/tree_cluster_3.tscn" id="5_eb0c7"]
 [ext_resource type="PackedScene" uid="uid://c2xaqmxr7u5py" path="res://environments/castle.tscn" id="6_uqs87"]
-[ext_resource type="PackedScene" uid="uid://c6ja8m5ul0bed" path="res://environments/bush.tscn" id="7_eb0c7"]
-[ext_resource type="PackedScene" uid="uid://b6fpugtwpfg07" path="res://ui/hud.tscn" id="9_to5s0"]
 [ext_resource type="Texture2D" uid="uid://8bw8toy5s6xc" path="res://environments/grass_floor.png" id="7_jdiad"]
 [ext_resource type="PackedScene" uid="uid://bobys07e4k68a" path="res://enemies/simple_enemy/simple_enemy.tscn" id="7_xk8d6"]
 [ext_resource type="PackedScene" uid="uid://joeck5ecqln5" path="res://environments/grass.tscn" id="8_jdiad"]
+[ext_resource type="PackedScene" uid="uid://b6fpugtwpfg07" path="res://ui/hud.tscn" id="9_to5s0"]
 
 [node name="Level" type="Node2D" unique_id=125674357]
 
@@ -304,8 +303,9 @@ position = Vector2(-702, 576)
 
 [node name="HUD" parent="." unique_id=1998963175 instance=ExtResource("9_to5s0")]
 
-[node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
+[node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player", "hud") instance=ExtResource("3_qerkk")]
 player = NodePath("../Player")
+hud = NodePath("../HUD")
 
 [node name="SimpleEnemy" parent="." unique_id=1902833144 instance=ExtResource("7_xk8d6")]
 position = Vector2(576, -320)

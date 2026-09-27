@@ -54,18 +54,16 @@ radius = 40.0
 [node name="Egg" type="Node2D" unique_id=242543508]
 script = ExtResource("1_xofaw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671992717]
-position = Vector2(7.9999995, 39.999996)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_apu8j")
-
 [node name="Shadow" type="Panel" parent="." unique_id=1233669077]
-z_index = -1
-offset_left = -18.0
-offset_top = -18.0
+offset_left = -24.0
 offset_right = 24.0
 offset_bottom = 34.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xofaw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671992717]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_apu8j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=286781462]
 libraries/ = SubResource("AnimationLibrary_do5r1")
