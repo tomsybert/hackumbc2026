@@ -7,6 +7,13 @@
 [ext_resource type="AudioStream" uid="uid://ddwyxucvwvvvm" path="res://player/player_hit.wav" id="5_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://jkh6r1dwrrvy" path="res://player/fire.wav" id="6_g6k8r"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6k8r"]
+bg_color = Color(0, 0, 0, 0.19607843)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqhl4"]
 size = Vector2(96, 96)
 
@@ -637,6 +644,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, -8), Vector2(0, 8)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(96, 40), Vector2(112, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-48, 48), Vector2(-56, 48)]
+}
 
 [sub_resource type="Animation" id="Animation_wodsf"]
 length = 0.001
@@ -652,6 +683,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-48, 48)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_32hag"]
 _data = {
@@ -661,8 +716,16 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=526105913]
 z_index = 1
-collision_mask = 9
+collision_mask = 10
 script = ExtResource("1_rkbax")
+
+[node name="Shadow" type="Panel" parent="." unique_id=612638095]
+z_index = -1
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 88.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6k8r")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1812152486]
 
@@ -675,6 +738,7 @@ vframes = 3
 frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469720684]
+visible = false
 shape = SubResource("RectangleShape2D_jqhl4")
 
 [node name="Attacker" type="Node2D" parent="." unique_id=1867637124]
@@ -690,6 +754,7 @@ bus = &"SFX"
 script = ExtResource("4_yw30f")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1583767803]
+visible = false
 collision_layer = 0
 collision_mask = 4
 

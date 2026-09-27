@@ -2,12 +2,26 @@
 
 [ext_resource type="Texture2D" uid="uid://pshxbhmvyyfs" path="res://environments/tree.png" id="1_fmd7o"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmd7o"]
+bg_color = Color(0, 0, 0, 0.19607843)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqhl4"]
 size = Vector2(128, 128)
 
 [node name="Tree" type="StaticBody2D" unique_id=2020497772]
 collision_layer = 2
 collision_mask = 0
+
+[node name="Shadow" type="Panel" parent="." unique_id=1281015502]
+offset_left = -64.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fmd7o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169370274]
 position = Vector2(0, -17)
