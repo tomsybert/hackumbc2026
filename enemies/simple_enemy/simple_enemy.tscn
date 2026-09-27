@@ -344,6 +344,42 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_yllr7")
 nodes/TimeScale/position = Vector2(40, 120)
 node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"BlendSpace2D"]
 
+[sub_resource type="Animation" id="Animation_xnvhp"]
+resource_name = "Hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l4g3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4g3i"]
+_data = {
+&"Hurt": SubResource("Animation_xnvhp"),
+&"RESET": SubResource("Animation_l4g3i")
+}
+
 [node name="SimpleEnemy" type="CharacterBody2D" unique_id=1902833144 groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 6
@@ -377,3 +413,6 @@ tree_root = SubResource("AnimationNodeBlendTree_3dob5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/BlendSpace2D/blend_position = Vector2(-0.61585164, 0.009141326)
 parameters/TimeScale/scale = 1.0
+
+[node name="HurtAnim" type="AnimationPlayer" parent="." unique_id=259551785]
+libraries/ = SubResource("AnimationLibrary_l4g3i")

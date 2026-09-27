@@ -28,13 +28,15 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if!dead:
 		if body.is_in_group("Enemy"):
 			life-=1
+			$DeathAnimator.stop()
+			$DeathAnimator.play("Hurt")
 			body.queue_free()
 		if life<=0:
 			die()
 
 func die():
-	self.visible=false
 	dead=true
+	$DeathAnimator.stop()
 	$DeathAnimator.play("Die")
 
 func die_paused():

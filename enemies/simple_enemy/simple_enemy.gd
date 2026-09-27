@@ -9,6 +9,8 @@ func _ready() -> void:
 
 func hurt(damage:float):
 	health-=damage
+	$HurtAnim.stop()
+	$HurtAnim.play("Hurt")
 	if health<=0:
 		var rand = randi_range(1,GlobalController.upgrade_chance)
 		if rand==GlobalController.upgrade_chance:
