@@ -6,19 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://yyr4trpkrhtb" path="res://environments/tree_cluster_2.tscn" id="4_xk8d6"]
 [ext_resource type="PackedScene" uid="uid://d1mj568sci5rl" path="res://environments/tree_cluster_3.tscn" id="5_eb0c7"]
 [ext_resource type="PackedScene" uid="uid://c2xaqmxr7u5py" path="res://environments/castle.tscn" id="6_uqs87"]
+[ext_resource type="PackedScene" uid="uid://c6ja8m5ul0bed" path="res://environments/bush.tscn" id="7_eb0c7"]
+[ext_resource type="PackedScene" uid="uid://joeck5ecqln5" path="res://environments/grass.tscn" id="8_jdiad"]
 [ext_resource type="PackedScene" uid="uid://bobys07e4k68a" path="res://enemies/simple_enemy/simple_enemy.tscn" id="7_xk8d6"]
 
 [node name="Level" type="Node2D" unique_id=125674357]
 
 [node name="Player" parent="." unique_id=526105913 node_paths=PackedStringArray("ui") instance=ExtResource("1_rn1uv")]
+z_index = 1
+y_sort_enabled = true
 ui = NodePath("../UI")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1496290031]
 
-[node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
-player = NodePath("../Player")
-
 [node name="Trees" type="Node2D" parent="." unique_id=1561230347]
+y_sort_enabled = true
 
 [node name="TreeCluster1" parent="Trees" unique_id=1143310058 instance=ExtResource("3_uqs87")]
 position = Vector2(1920, -128)
@@ -153,6 +155,7 @@ position = Vector2(2048, 256)
 position = Vector2(1792, 64)
 
 [node name="Castles" type="Node2D" parent="." unique_id=1811759817]
+z_index = 1
 
 [node name="Castle" parent="Castles" unique_id=504995226 instance=ExtResource("6_uqs87")]
 position = Vector2(0, -1536)
@@ -178,6 +181,182 @@ position = Vector2(-1536, 0)
 [node name="Castle8" parent="Castles" unique_id=1192562128 instance=ExtResource("6_uqs87")]
 position = Vector2(-1024, -1024)
 
+[node name="Decorations" type="Node2D" parent="." unique_id=1793865821]
+
+[node name="Bushes" type="Node2D" parent="Decorations" unique_id=300221252]
+
+[node name="Bush" parent="Decorations/Bushes" unique_id=2020497772 instance=ExtResource("7_eb0c7")]
+position = Vector2(-963, 255)
+
+[node name="Bush2" parent="Decorations/Bushes" unique_id=980837590 instance=ExtResource("7_eb0c7")]
+position = Vector2(-1428, -416)
+
+[node name="Bush3" parent="Decorations/Bushes" unique_id=163315266 instance=ExtResource("7_eb0c7")]
+position = Vector2(-1400, -778)
+
+[node name="Bush4" parent="Decorations/Bushes" unique_id=358583034 instance=ExtResource("7_eb0c7")]
+position = Vector2(-733, -1344)
+
+[node name="Bush5" parent="Decorations/Bushes" unique_id=1066016610 instance=ExtResource("7_eb0c7")]
+position = Vector2(-319, -977)
+
+[node name="Bush6" parent="Decorations/Bushes" unique_id=1456667445 instance=ExtResource("7_eb0c7")]
+position = Vector2(446, -1633)
+
+[node name="Bush7" parent="Decorations/Bushes" unique_id=162677751 instance=ExtResource("7_eb0c7")]
+position = Vector2(960, -1441)
+
+[node name="Bush8" parent="Decorations/Bushes" unique_id=92534773 instance=ExtResource("7_eb0c7")]
+position = Vector2(1562, -631)
+
+[node name="Bush9" parent="Decorations/Bushes" unique_id=209691465 instance=ExtResource("7_eb0c7")]
+position = Vector2(1123, -372)
+
+[node name="Bush10" parent="Decorations/Bushes" unique_id=441899413 instance=ExtResource("7_eb0c7")]
+position = Vector2(409, -836)
+
+[node name="Bush11" parent="Decorations/Bushes" unique_id=1322880056 instance=ExtResource("7_eb0c7")]
+position = Vector2(-627, -347)
+
+[node name="Bush12" parent="Decorations/Bushes" unique_id=478150691 instance=ExtResource("7_eb0c7")]
+position = Vector2(-468, 676)
+
+[node name="Bush13" parent="Decorations/Bushes" unique_id=986575422 instance=ExtResource("7_eb0c7")]
+position = Vector2(-627, 1336)
+
+[node name="Bush14" parent="Decorations/Bushes" unique_id=708055255 instance=ExtResource("7_eb0c7")]
+position = Vector2(-1329, 1081)
+
+[node name="Bush15" parent="Decorations/Bushes" unique_id=1806199041 instance=ExtResource("7_eb0c7")]
+position = Vector2(1019, 1353)
+
+[node name="Bush16" parent="Decorations/Bushes" unique_id=1980800486 instance=ExtResource("7_eb0c7")]
+position = Vector2(1712, 300)
+
+[node name="Bush17" parent="Decorations/Bushes" unique_id=1231899239 instance=ExtResource("7_eb0c7")]
+position = Vector2(1470, 847)
+
+[node name="Bush18" parent="Decorations/Bushes" unique_id=1674182097 instance=ExtResource("7_eb0c7")]
+position = Vector2(1253, 396)
+
+[node name="Bush19" parent="Decorations/Bushes" unique_id=684859368 instance=ExtResource("7_eb0c7")]
+position = Vector2(560, 571)
+
+[node name="Bush20" parent="Decorations/Bushes" unique_id=1941994678 instance=ExtResource("7_eb0c7")]
+position = Vector2(715, -131)
+
+[node name="Bush21" parent="Decorations/Bushes" unique_id=1320222194 instance=ExtResource("7_eb0c7")]
+position = Vector2(435, 1402)
+
+[node name="Bush22" parent="Decorations/Bushes" unique_id=509159661 instance=ExtResource("7_eb0c7")]
+position = Vector2(226, 972)
+
+[node name="Grass" type="Node2D" parent="Decorations" unique_id=656308311]
+
+[node name="Grass" parent="Decorations/Grass" unique_id=1361163815 instance=ExtResource("8_jdiad")]
+position = Vector2(-230, 434)
+
+[node name="Grass2" parent="Decorations/Grass" unique_id=643885351 instance=ExtResource("8_jdiad")]
+position = Vector2(-385, 50.00003)
+
+[node name="Grass3" parent="Decorations/Grass" unique_id=1727037601 instance=ExtResource("8_jdiad")]
+position = Vector2(-970, -205)
+
+[node name="Grass4" parent="Decorations/Grass" unique_id=1561572959 instance=ExtResource("8_jdiad")]
+position = Vector2(241, -330)
+
+[node name="Grass5" parent="Decorations/Grass" unique_id=265229300 instance=ExtResource("8_jdiad")]
+position = Vector2(717, 17)
+
+[node name="Grass6" parent="Decorations/Grass" unique_id=1119788725 instance=ExtResource("8_jdiad")]
+position = Vector2(3.000061, 301)
+
+[node name="Grass7" parent="Decorations/Grass" unique_id=1174762932 instance=ExtResource("8_jdiad")]
+position = Vector2(437, -209)
+
+[node name="Grass8" parent="Decorations/Grass" unique_id=1243818144 instance=ExtResource("8_jdiad")]
+position = Vector2(-123, -702)
+
+[node name="Grass9" parent="Decorations/Grass" unique_id=1093201143 instance=ExtResource("8_jdiad")]
+position = Vector2(-608, -568)
+
+[node name="Grass10" parent="Decorations/Grass" unique_id=323916387 instance=ExtResource("8_jdiad")]
+position = Vector2(-1159, -585)
+
+[node name="Grass11" parent="Decorations/Grass" unique_id=691997484 instance=ExtResource("8_jdiad")]
+position = Vector2(-587, -1044)
+
+[node name="Grass12" parent="Decorations/Grass" unique_id=2093114703 instance=ExtResource("8_jdiad")]
+position = Vector2(77, -1119)
+
+[node name="Grass13" parent="Decorations/Grass" unique_id=759057069 instance=ExtResource("8_jdiad")]
+position = Vector2(786, -621)
+
+[node name="Grass14" parent="Decorations/Grass" unique_id=2046132844 instance=ExtResource("8_jdiad")]
+position = Vector2(748.00006, -1177)
+
+[node name="Grass15" parent="Decorations/Grass" unique_id=1528238125 instance=ExtResource("8_jdiad")]
+position = Vector2(1375, -730)
+
+[node name="Grass16" parent="Decorations/Grass" unique_id=1754802611 instance=ExtResource("8_jdiad")]
+position = Vector2(1158, -103.00006)
+
+[node name="Grass17" parent="Decorations/Grass" unique_id=852570896 instance=ExtResource("8_jdiad")]
+position = Vector2(-70, 753)
+
+[node name="Grass18" parent="Decorations/Grass" unique_id=567429874 instance=ExtResource("8_jdiad")]
+position = Vector2(-1102, 544)
+
+[node name="Grass19" parent="Decorations/Grass" unique_id=434845364 instance=ExtResource("8_jdiad")]
+position = Vector2(-1516, 456)
+
+[node name="Grass20" parent="Decorations/Grass" unique_id=736680147 instance=ExtResource("8_jdiad")]
+position = Vector2(-1683, -492)
+
+[node name="Grass21" parent="Decorations/Grass" unique_id=1758949357 instance=ExtResource("8_jdiad")]
+position = Vector2(-1128, -158)
+
+[node name="Grass22" parent="Decorations/Grass" unique_id=836440906 instance=ExtResource("8_jdiad")]
+position = Vector2(-581, 949)
+
+[node name="Grass23" parent="Decorations/Grass" unique_id=1016307881 instance=ExtResource("8_jdiad")]
+position = Vector2(-247, 1221)
+
+[node name="Grass24" parent="Decorations/Grass" unique_id=1604659858 instance=ExtResource("8_jdiad")]
+position = Vector2(-598, 1526)
+
+[node name="Grass25" parent="Decorations/Grass" unique_id=1561924326 instance=ExtResource("8_jdiad")]
+position = Vector2(-1070, 1388)
+
+[node name="Grass26" parent="Decorations/Grass" unique_id=660091125 instance=ExtResource("8_jdiad")]
+position = Vector2(292, 1225)
+
+[node name="Grass27" parent="Decorations/Grass" unique_id=1619326347 instance=ExtResource("8_jdiad")]
+position = Vector2(668, 807)
+
+[node name="Grass28" parent="Decorations/Grass" unique_id=310601472 instance=ExtResource("8_jdiad")]
+position = Vector2(309, 506)
+
+[node name="Grass29" parent="Decorations/Grass" unique_id=1694407672 instance=ExtResource("8_jdiad")]
+position = Vector2(1082, 531)
+
+[node name="Grass30" parent="Decorations/Grass" unique_id=1515726496 instance=ExtResource("8_jdiad")]
+position = Vector2(1638, 535)
+
+[node name="Grass31" parent="Decorations/Grass" unique_id=746764490 instance=ExtResource("8_jdiad")]
+position = Vector2(1283, 1095)
+
+[node name="Grass32" parent="Decorations/Grass" unique_id=1523254955 instance=ExtResource("8_jdiad")]
+position = Vector2(727, 1529)
+
+[node name="Grass33" parent="Decorations/Grass" unique_id=1896858396 instance=ExtResource("8_jdiad")]
+position = Vector2(639, 1065.0001)
+
+[node name="Grass34" parent="Decorations/Grass" unique_id=346580487 instance=ExtResource("8_jdiad")]
+position = Vector2(-702, 576)
+
+[node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
+player = NodePath("../Player")
 [node name="SimpleEnemy" parent="." unique_id=1902833144 instance=ExtResource("7_xk8d6")]
 position = Vector2(576, -320)
 

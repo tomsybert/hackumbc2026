@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://c2xaqmxr7u5py"]
 
-[ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="1_lquks"]
 [ext_resource type="Script" uid="uid://dleawxpnbn4t" path="res://environments/castle.gd" id="1_pn1ri"]
+[ext_resource type="Texture2D" uid="uid://bok3eowu5snok" path="res://environments/castle.png" id="2_pn1ri"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqhl4"]
-size = Vector2(256, 256)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0dkrt"]
+radius = 116.0
+height = 350.0
 
 [node name="Castle" type="StaticBody2D" unique_id=504995226]
 collision_layer = 8
@@ -12,11 +13,12 @@ script = ExtResource("1_pn1ri")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=218400284]
 position = Vector2(-3.8146973e-06, -3.8146973e-06)
-scale = Vector2(2, 2)
-texture = ExtResource("1_lquks")
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("2_pn1ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254420083]
-shape = SubResource("RectangleShape2D_jqhl4")
+position = Vector2(-13, 45)
+shape = SubResource("CapsuleShape2D_0dkrt")
 
 [node name="Timer" type="Timer" parent="." unique_id=201670638]
 autostart = true

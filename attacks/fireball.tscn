@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3ltl83fxacwv"]
 
 [ext_resource type="Script" uid="uid://bi7pmy017le4r" path="res://attacks/fireball.gd" id="1_6laml"]
-[ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="1_wq5g2"]
+[ext_resource type="Texture2D" uid="uid://fmigxjy0wura" path="res://player/fire.png" id="2_6laml"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shqcm"]
 radius = 24.0
@@ -11,9 +11,10 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_6laml")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1675686325]
+modulate = Color(0.82753307, 0.39422724, 0, 1)
 position = Vector2(-7.1525574e-07, -7.1525574e-07)
-scale = Vector2(0.37499997, 0.37499997)
-texture = ExtResource("1_wq5g2")
+scale = Vector2(0.13499999, 0.13499999)
+texture = ExtResource("2_6laml")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1874069695]
 collision_layer = 0
