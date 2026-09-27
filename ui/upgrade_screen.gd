@@ -1,7 +1,7 @@
 extends Control
 
-var upgrade_text : Array[String] = ["Damage Up","+1 Life","Speed Increase","Fireball Speed"]
-var upgrade_pool : Array[String] = ["uid://ch5g1dg0wtkbh","uid://dab1ojx8rxjf","uid://bulgadvnoep3y","uid://j18mj6tfq3r"]
+var upgrade_text : Array[String] = ["Damage Up","+1 Life","Speed Increase","Firebreath Speed","Firebreath Size"]
+var upgrade_pool : Array[String] = ["uid://ch5g1dg0wtkbh","uid://dab1ojx8rxjf","uid://bulgadvnoep3y","uid://j18mj6tfq3r","uid://bvhtwq2x6kq4v"]
 var upg_index : Array[int]
 
 func _ready():

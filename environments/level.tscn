@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yyr4trpkrhtb" path="res://environments/tree_cluster_2.tscn" id="4_xk8d6"]
 [ext_resource type="PackedScene" uid="uid://d1mj568sci5rl" path="res://environments/tree_cluster_3.tscn" id="5_eb0c7"]
 [ext_resource type="PackedScene" uid="uid://c2xaqmxr7u5py" path="res://environments/castle.tscn" id="6_uqs87"]
+[ext_resource type="PackedScene" uid="uid://bobys07e4k68a" path="res://enemies/simple_enemy/simple_enemy.tscn" id="7_xk8d6"]
 
 [node name="Level" type="Node2D" unique_id=125674357]
 
@@ -176,3 +177,9 @@ position = Vector2(-1536, 0)
 
 [node name="Castle8" parent="Castles" unique_id=1192562128 instance=ExtResource("6_uqs87")]
 position = Vector2(-1024, -1024)
+
+[node name="SimpleEnemy" parent="." unique_id=1902833144 instance=ExtResource("7_xk8d6")]
+position = Vector2(576, -320)
+
+[node name="SimpleEnemy2" parent="." unique_id=1449789212 instance=ExtResource("7_xk8d6")]
+position = Vector2(-576, 312)

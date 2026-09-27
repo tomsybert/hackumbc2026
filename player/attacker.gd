@@ -5,6 +5,7 @@ var attack_cooldown : float = 0.05
 var current_attack_cooldown : float = 0
 var bullet_speed : float = 300
 var damage : float = 0.1
+var bullet_size : float = 0.8
 
 func _physics_process(delta: float) -> void:
 	#Aiming
@@ -17,6 +18,8 @@ func _physics_process(delta: float) -> void:
 		bullet.rotation = self.rotation
 		bullet.speed = bullet_speed
 		bullet.damage=damage
+		bullet.scale.x=bullet_size
+		bullet.scale.y=bullet_size
 		current_attack_cooldown=attack_cooldown
 		$"..".get_parent().add_child(bullet)
 	if current_attack_cooldown>0:
