@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3qe4n32xux1e" path="res://intro/IMG_6467.jpg" id="2_vyos2"]
 [ext_resource type="Texture2D" uid="uid://cyubes4xrqe4o" path="res://intro/IMG_6469.jpg" id="3_1q7h5"]
 [ext_resource type="Texture2D" uid="uid://cty2ia35bheqp" path="res://ui/advance_arrow_spritesheet.png" id="3_pxqmo"]
-[ext_resource type="Texture2D" uid="uid://6qml3574l1wc" path="res://intro/roy_unhappy.png" id="4_a5lnx"]
+[ext_resource type="Texture2D" uid="uid://bdh8xsgplay8n" path="res://intro/roy_unhappy.jpg" id="4_a5lnx"]
 [ext_resource type="AudioStream" uid="uid://cx1fjhmavxnyu" path="res://ui/advance_text_sfx.wav" id="4_pxqmo"]
 
 [sub_resource type="Animation" id="Animation_a5lnx"]
@@ -248,7 +248,7 @@ texture = ExtResource("3_1q7h5")
 visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(642, 243)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.33888888, 0.33888885)
 texture = ExtResource("4_a5lnx")
 
 [node name="bg_anim" type="AnimationPlayer" parent="backgroudns" unique_id=1321046440]
