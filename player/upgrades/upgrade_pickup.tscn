@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://disdjs3wyk2s6"]
 
 [ext_resource type="Script" uid="uid://nm6l67eb06ml" path="res://player/upgrades/upgrade_pickup.gd" id="1_rmo8j"]
-[ext_resource type="Texture2D" uid="uid://bvs6m85ffxapp" path="res://icon.svg" id="2_57reg"]
+[ext_resource type="Texture2D" uid="uid://ng7haisq80t5" path="res://player/upgrades/diamond.png" id="2_57reg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jqhl4"]
-radius = 32.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eb0c7"]
+radius = 22.0
+height = 84.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57reg"]
-radius = 32.0
+radius = 28.0
 
 [node name="UpgradePickup" type="StaticBody2D" unique_id=176196583]
 collision_layer = 0
@@ -16,13 +17,13 @@ script = ExtResource("1_rmo8j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=230331003]
 position = Vector2(-2.3841858e-06, -2.3841858e-06)
-scale = Vector2(0.49999997, 0.49999997)
+scale = Vector2(0.215, 0.21499999)
 texture = ExtResource("2_57reg")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1968374512]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2129201187]
-shape = SubResource("CircleShape2D_jqhl4")
+shape = SubResource("CapsuleShape2D_eb0c7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1160496060]
 shape = SubResource("CircleShape2D_57reg")
