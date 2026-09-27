@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://br500l3d6v8fv" path="res://player/dragon_spritesheet.png" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://c5j7iis4bk66k" path="res://player/attacker.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://2rsdtkailmad" path="res://player/upgrades/upgrade_manager.gd" id="4_yw30f"]
+[ext_resource type="AudioStream" uid="uid://ddwyxucvwvvvm" path="res://player/player_hit.wav" id="5_qjkh3"]
+[ext_resource type="AudioStream" uid="uid://jkh6r1dwrrvy" path="res://player/fire.wav" id="6_g6k8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqhl4"]
 size = Vector2(96, 96)
@@ -102,6 +104,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-8, 0), Vector2(8, 0), Vector2(-8, 0), Vector2(8, 0), Vector2(0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_qjkh3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_tqiix"]
 length = 0.001
@@ -664,6 +681,11 @@ shape = SubResource("RectangleShape2D_jqhl4")
 position = Vector2(0, 40)
 script = ExtResource("3_g1dw6")
 
+[node name="Fire" type="AudioStreamPlayer" parent="Attacker" unique_id=1621105096]
+stream = ExtResource("6_g6k8r")
+volume_db = -12.0
+bus = &"SFX"
+
 [node name="UpgradeManager" type="Node" parent="." unique_id=373433661]
 script = ExtResource("4_yw30f")
 
@@ -689,5 +711,8 @@ parameters/TimeScale/scale = 1.0
 [node name="Floaty" type="AnimationPlayer" parent="." unique_id=1748995780]
 libraries/ = SubResource("AnimationLibrary_32hag")
 autoplay = &"Float"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1771650298]
+bus = &"SFX"
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

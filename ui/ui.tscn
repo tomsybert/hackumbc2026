@@ -5,6 +5,8 @@
 [ext_resource type="FontFile" uid="uid://bk1uuvjou7e1b" path="res://util/darumadropone/DarumadropOne-Regular.ttf" id="3_wl5ax"]
 [ext_resource type="StyleBox" uid="uid://cdeqnpqp5yq48" path="res://ui/flat_style.tres" id="4_vkava"]
 [ext_resource type="Texture2D" uid="uid://dmcg4jkxmj3b6" path="res://ui/ui_border.png" id="5_tf0e0"]
+[ext_resource type="AudioStream" uid="uid://dknp6ntrdhcdc" path="res://player/upgrades/upgrade_chose_2.wav" id="6_bo1jx"]
+[ext_resource type="AudioStream" uid="uid://dp4rsa1pn54no" path="res://player/upgrades/upgrade_get.wav.wav" id="7_gycre"]
 
 [sub_resource type="Animation" id="Animation_vkava"]
 length = 0.001
@@ -251,6 +253,21 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -128)]
 }
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AudioStreamPlayer2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bo1jx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_wl5ax"]
 resource_name = "show"
@@ -398,6 +415,21 @@ tracks/11/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer2")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_gycre")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/12/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vkava"]
 _data = {
@@ -662,7 +694,7 @@ layout_mode = 0
 offset_left = 832.0
 offset_top = 192.0
 offset_right = 1088.0001
-offset_bottom = 575.99976
+offset_bottom = 575.9999
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -703,6 +735,10 @@ patch_margin_bottom = 317
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UpgradeScreen" unique_id=1416311210]
 libraries/ = SubResource("AnimationLibrary_vkava")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="UpgradeScreen" unique_id=969384365]
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="GameOver" type="Control" parent="." unique_id=698617468]
 process_mode = 3
