@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6fpugtwpfg07"]
+
+[ext_resource type="Script" uid="uid://c1nok2qhvfn13" path="res://ui/hud.gd" id="1_rbyyf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1649795704]
+script = ExtResource("1_rbyyf")
+
+[node name="Hearts" type="Control" parent="." unique_id=1785138050]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartContainer" type="GridContainer" parent="Hearts" unique_id=1739909370]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 316.0
+offset_bottom = 316.0
+columns = 3
