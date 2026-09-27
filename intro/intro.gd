@@ -5,8 +5,8 @@ extends Control
 @onready var advance_texture = $TextBox/AdvanceTexture
 @onready var audio_player = $AudioStreamPlayer
 
-var visible_ratio = 0.0
-var text_speed = 0.008
+var visible_characters = 0.0
+var text_speed = 40
 
 var textbox_array = [
 	"This is text box number 1!",
@@ -16,7 +16,7 @@ var textbox_index = 0
 
 
 func _ready() -> void:
-	visible_ratio = 0.0
+	visible_characters = 0.0
 	textbox_index = 0
 	textbox.visible_characters = 0
 	advance_texture.visible = false
@@ -26,20 +26,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("game_fire"):
 		textbox_index += 1
-		visible_ratio = 0.0
+		visible_characters = 0.0
 	
 	if textbox_index > textbox_array.size() - 1:
 		textbox_index = textbox_array.size() - 1
 	if textbox_index < 0:
 		textbox_index = 0
 	
-	if visible_ratio < 1.0:
+	if visible_characters < textbox_array[textbox_index].length():
 		advance_texture.visible = false
-		visible_ratio += text_speed
+		visible_characters += text_speed * delta
 		if not audio_player.playing:
 			audio_player.play()
 	else:
 		advance_texture.visible = true
 	
-	textbox.visible_ratio = visible_ratio
+	textbox.visible_characters = visible_characters
 	textbox.text = textbox_array[textbox_index]
