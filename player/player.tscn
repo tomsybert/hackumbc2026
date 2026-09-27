@@ -163,7 +163,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_qjkh3"]
 resource_name = "FlyDown"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -204,7 +204,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_g6k8r"]
 resource_name = "FlyLeft"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -245,7 +245,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_boad6"]
 resource_name = "FlyLeftDown"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -286,7 +286,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_rgyib"]
 resource_name = "FlyLeftUp"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -327,7 +327,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
 resource_name = "FlyRight"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -368,7 +368,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_8t03j"]
 resource_name = "FlyRightDown"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -409,7 +409,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_2ieo8"]
 resource_name = "FlyRightUp"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -450,7 +450,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ebec5"]
 resource_name = "FlyUp"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
