@@ -2,8 +2,197 @@
 
 [ext_resource type="FontFile" uid="uid://bk1uuvjou7e1b" path="res://util/darumadropone/DarumadropOne-Regular.ttf" id="1_fpmxm"]
 [ext_resource type="Script" uid="uid://3gfu2afbrp4b" path="res://intro/intro.gd" id="1_vjsr4"]
+[ext_resource type="Texture2D" uid="uid://3qe4n32xux1e" path="res://intro/IMG_6467.jpg" id="2_vyos2"]
+[ext_resource type="Texture2D" uid="uid://cyubes4xrqe4o" path="res://intro/IMG_6469.jpg" id="3_1q7h5"]
 [ext_resource type="Texture2D" uid="uid://cty2ia35bheqp" path="res://ui/advance_arrow_spritesheet.png" id="3_pxqmo"]
+[ext_resource type="Texture2D" uid="uid://6qml3574l1wc" path="res://intro/roy_unhappy.png" id="4_a5lnx"]
 [ext_resource type="AudioStream" uid="uid://cx1fjhmavxnyu" path="res://ui/advance_text_sfx.wav" id="4_pxqmo"]
+
+[sub_resource type="Animation" id="Animation_a5lnx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bg_1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg_2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg_2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bg_3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("bg_3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6ct58"]
+resource_name = "transition_1"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bg_1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg_2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg_2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_krbtg"]
+resource_name = "transition_2"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bg_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg_3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg_3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_krbtg"]
+_data = {
+&"RESET": SubResource("Animation_a5lnx"),
+&"transition_1": SubResource("Animation_6ct58"),
+&"transition_2": SubResource("Animation_krbtg")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vyos2"]
 atlas = ExtResource("3_pxqmo")
@@ -35,6 +224,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vjsr4")
+
+[node name="backgroudns" type="Control" parent="." unique_id=42835638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg_1" type="Sprite2D" parent="backgroudns" unique_id=1139875341]
+position = Vector2(646.3334, 251)
+scale = Vector2(0.33379632, 0.33379632)
+texture = ExtResource("2_vyos2")
+
+[node name="bg_2" type="Sprite2D" parent="backgroudns" unique_id=851686027]
+visible = false
+position = Vector2(641.3334, 399)
+scale = Vector2(0.3300926, 0.3300926)
+texture = ExtResource("3_1q7h5")
+
+[node name="bg_3" type="Sprite2D" parent="backgroudns" unique_id=392938074]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(642, 243)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_a5lnx")
+
+[node name="bg_anim" type="AnimationPlayer" parent="backgroudns" unique_id=1321046440]
+libraries/ = SubResource("AnimationLibrary_krbtg")
 
 [node name="BlackBars" type="Control" parent="." unique_id=973389210]
 anchors_preset = 0
@@ -95,4 +313,3 @@ frame_progress = 0.8892001
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=266912733]
 stream = ExtResource("4_pxqmo")
-bus = &"SFX"
