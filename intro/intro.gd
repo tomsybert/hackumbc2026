@@ -20,6 +20,7 @@ func _ready() -> void:
 	textbox_index = 0
 	textbox.visible_characters = 0
 	advance_texture.visible = false
+	textbox.text = ""
 
 
 func _process(delta: float) -> void:

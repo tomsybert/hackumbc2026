@@ -83,7 +83,7 @@ offset_bottom = 665.0
 theme_override_fonts/normal_font = ExtResource("1_fpmxm")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "Holy shit this is a test!!! "
+text = "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy doggggggggggggggg!"
 scroll_active = false
 
 [node name="AdvanceTexture" type="AnimatedSprite2D" parent="TextBox" unique_id=928625169]
@@ -91,7 +91,7 @@ position = Vector2(1089.0001, 535)
 scale = Vector2(0.24500056, 0.24500056)
 sprite_frames = SubResource("SpriteFrames_22vlk")
 autoplay = "default"
-frame_progress = 0.92423034
+frame_progress = 0.59001744
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=266912733]
 stream = ExtResource("4_pxqmo")
