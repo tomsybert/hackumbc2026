@@ -894,6 +894,7 @@ one_shot = true
 [node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_gycre")]
 
 [node name="MusicBGM" type="AudioStreamPlayer" parent="." unique_id=1075047311]
+process_mode = 3
 stream = ExtResource("10_ay4pc")
 autoplay = true
 bus = &"Music"

@@ -17,7 +17,7 @@ var ongoing = false
 func restart():
 	enemy_spawn_time = Vector2(5,15)
 	level = 0
-	enemy_hp = Vector2(5,15)
+	enemy_hp = Vector2(1,1)
 	upgrade_amnt=0
 	upgrade_target = 2
 

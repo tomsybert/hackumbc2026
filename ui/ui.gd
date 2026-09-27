@@ -16,6 +16,7 @@ func _ready():
 	$GameOver.visible=false
 	$QuittingLabel.visible = false
 	GlobalController.ongoing=true
+	GlobalController.restart()
 	
 func game_over():
 	hud.game_over()
