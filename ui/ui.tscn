@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dfop5n3mraxsc" path="res://player/upgrades/icons/arrows.png" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://dp4rsa1pn54no" path="res://player/upgrades/upgrade_get.wav.wav" id="7_gycre"]
 [ext_resource type="PackedScene" uid="uid://c6mqi3f0xxkm4" path="res://ui/transitioner.tscn" id="8_gycre"]
+[ext_resource type="AudioStream" uid="uid://emmxhbiv26e7" path="res://main_bgm_ok.mp3" id="10_ay4pc"]
 
 [sub_resource type="Animation" id="Animation_vkava"]
 length = 0.001
@@ -891,6 +892,11 @@ scroll_active = false
 one_shot = true
 
 [node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_gycre")]
+
+[node name="MusicBGM" type="AudioStreamPlayer" parent="." unique_id=1075047311]
+stream = ExtResource("10_ay4pc")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="UpgradeScreen/Upgrade1" to="UpgradeScreen" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="UpgradeScreen/Upgrade2" to="UpgradeScreen" method="_on_upgrade_2_pressed"]
