@@ -2,13 +2,18 @@ extends Node
 
 var player : Player
 
-var upgrade_chance : int = 15
+var upgrade_chance : int = 18
 
-var enemy_spawn_time : Vector2 = Vector2(5,15)
+var enemy_spawn_time : Vector2 = Vector2(5,15) #Default 2, 15
 
 var level_time : float = 30
-var level := 0
-var enemy_hp : Vector2 = Vector2(1,1)
+var level := 0 #default 0
+var enemy_hp : Vector2 = Vector2(1,1) #default 1,1
+
+func restart():
+	enemy_spawn_time = Vector2(5,15)
+	level = 0
+	enemy_hp = Vector2(5,15)
 
 func _process(delta: float) -> void:
 	level_time-=delta
