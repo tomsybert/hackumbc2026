@@ -896,6 +896,7 @@ one_shot = true
 [node name="MusicBGM" type="AudioStreamPlayer" parent="." unique_id=1075047311]
 process_mode = 3
 stream = ExtResource("10_ay4pc")
+volume_db = -11.859
 autoplay = true
 bus = &"Music"
 
