@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 var health : float = 1.0
 var speed = 5000.0
+var maxSpeed = 0
 var upgrade = preload("uid://disdjs3wyk2s6")
 var death_effect = preload("uid://bqnddhd58gt27")
 
 func _ready() -> void:
-	pass
+	maxSpeed = speed
 
 func hurt(damage:float):
 	health-=damage
@@ -38,3 +39,10 @@ func _physics_process(delta: float) -> void:
 	$AnimationTree.set("parameters/BlendSpace2D/blend_position",speed*position.direction_to(GlobalController.player.position))
 	
 	move_and_slide()
+
+func poison(time:float):
+	$PoisonCounter.wait_time=time
+	$PoisonCounter.start()
+
+func _on_poison_counter_timeout() -> void:
+	hurt(0.5)

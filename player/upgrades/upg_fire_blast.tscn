@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2mt73cpcven5"]
+
+[ext_resource type="Script" uid="uid://bpfa2sjbprytf" path="res://player/upgrades/upg_fire_blast.gd" id="1_renoy"]
+
+[node name="UpgFireBlast" type="Node" unique_id=1958659301]
+script = ExtResource("1_renoy")
+
+[node name="Timer" type="Timer" parent="." unique_id=2099444142]
+wait_time = 3.0
+one_shot = true

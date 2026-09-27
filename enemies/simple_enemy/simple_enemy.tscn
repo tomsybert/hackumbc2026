@@ -442,3 +442,7 @@ bus = &"SFX"
 stream = ExtResource("4_ubp53")
 volume_db = -10.0
 bus = &"SFX"
+
+[node name="PoisonCounter" type="Timer" parent="." unique_id=647014388]
+
+[connection signal="timeout" from="PoisonCounter" to="." method="_on_poison_counter_timeout"]

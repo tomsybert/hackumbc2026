@@ -1,8 +1,19 @@
 extends Control
 
-var upgrade_text : Array[String] = ["Damage Up","+1 Life","Speed Increase","Firebreath Speed","Firebreath Size"]
-var upgrade_pool : Array[String] = ["uid://ch5g1dg0wtkbh","uid://dab1ojx8rxjf","uid://bulgadvnoep3y","uid://j18mj6tfq3r","uid://bvhtwq2x6kq4v"]
+var upgrade_text : Array[String] = [
+	"Stronger Flames","+1 Life",
+	"Movement Speed Increase","Flame Distance Increase",
+	"Flame Size Increase","Widen Spread",
+	"Poison Breath","Frost Flames",
+	"Additional Fireball","Lay Egg Mines"]
+var upgrade_pool : Array[String] = [
+	"uid://ch5g1dg0wtkbh","uid://dab1ojx8rxjf",
+	"uid://bulgadvnoep3y","uid://j18mj6tfq3r",
+	"uid://bvhtwq2x6kq4v","uid://dqsnmnybrkoam",
+	"uid://xm202ur7sd1g","uid://cilqroi6y42lx",
+	"uid://d2mt73cpcven5","uid://cxqtw65twk427"]
 var upg_index : Array[int]
+var poisoned = false
 
 func _ready():
 	visible=false

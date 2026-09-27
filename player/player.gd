@@ -20,8 +20,9 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		
 		#Anim
-		if input_vector.x!=0||input_vector.y!=0:
-			$AnimationTree.set("parameters/BlendSpace2D/blend_position", input_vector)
+		#if input_vector.x!=0||input_vector.y!=0:
+		var vect = self.global_position.direction_to(get_global_mouse_position())
+		$AnimationTree.set("parameters/BlendSpace2D/blend_position", vect)
 		#$AnimationTree.set("parameters/TimeScale/scale", velocity.length()/maxSpeed)
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
