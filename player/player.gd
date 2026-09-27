@@ -7,6 +7,7 @@ class_name Player
 var maxSpeed : float = 250.0
 var acceleration : float = 3000.0
 var life : int = 3
+var score : float = 0.0
 var dead = false
 
 func _ready():

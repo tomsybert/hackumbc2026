@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://yyr4trpkrhtb" path="res://environments/tree_cluster_2.tscn" id="4_xk8d6"]
 [ext_resource type="PackedScene" uid="uid://d1mj568sci5rl" path="res://environments/tree_cluster_3.tscn" id="5_eb0c7"]
 [ext_resource type="PackedScene" uid="uid://c2xaqmxr7u5py" path="res://environments/castle.tscn" id="6_uqs87"]
+[ext_resource type="PackedScene" uid="uid://c6ja8m5ul0bed" path="res://environments/bush.tscn" id="7_eb0c7"]
+[ext_resource type="PackedScene" uid="uid://b6fpugtwpfg07" path="res://ui/hud.tscn" id="9_to5s0"]
 [ext_resource type="Texture2D" uid="uid://8bw8toy5s6xc" path="res://environments/grass_floor.png" id="7_jdiad"]
 [ext_resource type="PackedScene" uid="uid://bobys07e4k68a" path="res://enemies/simple_enemy/simple_enemy.tscn" id="7_xk8d6"]
 [ext_resource type="PackedScene" uid="uid://joeck5ecqln5" path="res://environments/grass.tscn" id="8_jdiad"]
@@ -299,6 +301,8 @@ position = Vector2(639, 1065.0001)
 
 [node name="Grass34" parent="Decorations/Grass" unique_id=346580487 instance=ExtResource("8_jdiad")]
 position = Vector2(-702, 576)
+
+[node name="HUD" parent="." unique_id=1998963175 instance=ExtResource("9_to5s0")]
 
 [node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
 player = NodePath("../Player")

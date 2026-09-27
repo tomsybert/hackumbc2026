@@ -30,6 +30,7 @@ func hurt(damage:float):
 		de.global_position = self.global_position
 		get_parent().add_child(de)
 		queue_free()
+		GlobalController.player.score += randf_range(5.01, 15.99)
 
 func _physics_process(delta: float) -> void:
 	if GlobalController.player:

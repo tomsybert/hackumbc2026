@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b6fpugtwpfg07"]
+
+[ext_resource type="Script" uid="uid://c1nok2qhvfn13" path="res://ui/hud.gd" id="1_rbyyf"]
+[ext_resource type="FontFile" uid="uid://bk1uuvjou7e1b" path="res://util/darumadropone/DarumadropOne-Regular.ttf" id="3_spcu4"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1649795704]
+script = ExtResource("1_rbyyf")
+
+[node name="Hearts" type="Control" parent="." unique_id=1785138050]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartContainer" type="GridContainer" parent="Hearts" unique_id=1739909370]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 316.0
+offset_bottom = 316.0
+columns = 3
+
+[node name="MoneyCounter" type="Control" parent="." unique_id=1328799638]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneyLabel" type="RichTextLabel" parent="MoneyCounter" unique_id=35831485]
+layout_mode = 1
+offset_left = 34.0
+offset_right = 1245.0
+offset_bottom = 128.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("3_spcu4")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[tornado]$0.0"
+scroll_active = false
+horizontal_alignment = 1
