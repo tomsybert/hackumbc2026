@@ -316,5 +316,9 @@ frame_progress = 0.8892001
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=266912733]
 stream = ExtResource("4_pxqmo")
 
+bus = &"SFX"
+
+
 [node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_6ct58")]
 layout_mode = 1
+
