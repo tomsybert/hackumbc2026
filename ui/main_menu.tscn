@@ -19,7 +19,7 @@ offset_bottom = 192.0
 theme_override_fonts/normal_font = ExtResource("1_t7e0r")
 theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
-text = "[center][tornado]Roy L. Tee"
+text = "[center][tornado]Late Fees"
 
 [node name="Watermark" type="RichTextLabel" parent="." unique_id=1353059352]
 layout_mode = 0
