@@ -889,6 +889,7 @@ scroll_active = false
 
 [node name="QuittingTimer" type="Timer" parent="." unique_id=1508228904]
 one_shot = true
+
 [node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_gycre")]
 
 [connection signal="pressed" from="UpgradeScreen/Upgrade1" to="UpgradeScreen" method="_on_upgrade_1_pressed"]
