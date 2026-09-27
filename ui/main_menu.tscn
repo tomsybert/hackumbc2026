@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://j5ihrb7raqnk" path="res://ui/menu_background.png" id="2_wk0pr"]
 [ext_resource type="StyleBox" uid="uid://cdeqnpqp5yq48" path="res://ui/flat_style.tres" id="3_rmr83"]
 [ext_resource type="Texture2D" uid="uid://dmcg4jkxmj3b6" path="res://ui/ui_border.png" id="3_wk0pr"]
+[ext_resource type="Theme" uid="uid://rxsiiwhsd8xp" path="res://slider_theme.tres" id="6_ei257"]
+[ext_resource type="Texture2D" uid="uid://beglmj7ijqn8v" path="res://ui/bar_comp.png" id="7_p8ri8"]
 
 [node name="MainMenu" type="Control" unique_id=185032467]
 layout_mode = 3
@@ -16,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_0dkrt")
 
 [node name="Background" type="TextureRect" parent="." unique_id=40578609]
+z_index = -1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -87,4 +90,72 @@ patch_margin_top = 337
 patch_margin_right = 385
 patch_margin_bottom = 317
 
+[node name="music_slider" type="HSlider" parent="." unique_id=1109596181]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 448.0
+offset_right = 1245.0
+offset_bottom = 597.0
+theme = ExtResource("6_ei257")
+max_value = 1.5
+step = 0.1
+value = 1.0
+
+[node name="back_slicder" type="Sprite2D" parent="music_slider" unique_id=1609793303]
+modulate = Color(0.20751238, 0.20751238, 0.20751238, 1)
+z_index = -1
+position = Vector2(135.49997, 74.749985)
+scale = Vector2(0.8557994, 0.5462967)
+texture = ExtResource("7_p8ri8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="music_slider" unique_id=296612976]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -16.0
+offset_right = 192.0
+offset_bottom = 24.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("1_t7e0r")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[tornado radius=3]Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_slider" type="HSlider" parent="." unique_id=1368090834]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 592.0
+offset_right = 1245.0
+offset_bottom = 741.0
+theme = ExtResource("6_ei257")
+max_value = 1.5
+step = 0.1
+value = 1.0
+
+[node name="back_slicder" type="Sprite2D" parent="sfx_slider" unique_id=1713303496]
+modulate = Color(0.20751238, 0.20751238, 0.20751238, 1)
+z_index = -1
+position = Vector2(135.49997, 74.749985)
+scale = Vector2(0.8557994, 0.5462967)
+texture = ExtResource("7_p8ri8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sfx_slider" unique_id=509606646]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -16.0
+offset_right = 192.0
+offset_bottom = 24.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("1_t7e0r")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[tornado radius=3]SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="sfx_slider" to="." method="_on_sfx_slider_value_changed"]
