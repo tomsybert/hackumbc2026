@@ -360,10 +360,10 @@ position = Vector2(639, 1065.0001)
 [node name="Grass34" parent="Decorations/Grass" unique_id=346580487 instance=ExtResource("8_jdiad")]
 position = Vector2(-702, 576)
 
+[node name="HUD" parent="." unique_id=1998963175 instance=ExtResource("9_to5s0")]
+
 [node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
 player = NodePath("../Player")
-
-[node name="HUD" parent="." unique_id=1998963175 instance=ExtResource("9_to5s0")]
 
 [node name="SimpleEnemy" parent="." unique_id=1902833144 instance=ExtResource("7_xk8d6")]
 position = Vector2(576, -320)
