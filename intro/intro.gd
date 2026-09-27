@@ -14,7 +14,8 @@ var text_done : bool = false
 var textbox_array = [
 	"After years of being cast in the biggest fantasy movies...",
 	"...Roy has not seen a single coin for his work.",
-	"Roy L Tee set to take revenge for those who had not paid him any royalies.",
+	"Roy L. Tee set to take revenge for those who had not paid him any royalies.",
+	"[color=yellow]CONTROLS: \nWASD - Move    Mouse - Aim \nLeft Click - Shoot",
 	""
 ]
 var textbox_index = 0
