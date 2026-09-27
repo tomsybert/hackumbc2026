@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://c8d3to7c3mqwq"]
 
 [ext_resource type="Texture2D" uid="uid://cp8sswr66yj24" path="res://egg.png" id="1_apu8j"]
-[ext_resource type="Script" path="res://attacks/.gd" id="1_xofaw"]
+[ext_resource type="Script" uid="uid://bx4n043yqx6gd" path="res://attacks/.gd" id="1_xofaw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xofaw"]
+bg_color = Color(0, 0, 0, 0.19607843)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="Animation" id="Animation_apu8j"]
 length = 0.001
@@ -51,6 +58,14 @@ script = ExtResource("1_xofaw")
 position = Vector2(7.9999995, 39.999996)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_apu8j")
+
+[node name="Shadow" type="Panel" parent="." unique_id=1233669077]
+z_index = -1
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 24.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xofaw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=286781462]
 libraries/ = SubResource("AnimationLibrary_do5r1")
