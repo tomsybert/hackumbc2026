@@ -6,7 +6,9 @@
 [ext_resource type="StyleBox" uid="uid://cdeqnpqp5yq48" path="res://ui/flat_style.tres" id="4_vkava"]
 [ext_resource type="Texture2D" uid="uid://dmcg4jkxmj3b6" path="res://ui/ui_border.png" id="5_tf0e0"]
 [ext_resource type="AudioStream" uid="uid://dknp6ntrdhcdc" path="res://player/upgrades/upgrade_chose_2.wav" id="6_bo1jx"]
+[ext_resource type="Texture2D" uid="uid://dfop5n3mraxsc" path="res://player/upgrades/icons/arrows.png" id="6_pa1oa"]
 [ext_resource type="AudioStream" uid="uid://dp4rsa1pn54no" path="res://player/upgrades/upgrade_get.wav.wav" id="7_gycre"]
+[ext_resource type="PackedScene" uid="uid://c6mqi3f0xxkm4" path="res://ui/transitioner.tscn" id="8_gycre"]
 
 [sub_resource type="Animation" id="Animation_vkava"]
 length = 0.001
@@ -500,9 +502,22 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_bo1jx"]
 resource_name = "die"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -546,7 +561,7 @@ tracks/3/path = NodePath("RichTextLabel:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.5, 1),
+"times": PackedFloat32Array(1.0333333, 1.5),
 "transitions": PackedFloat32Array(0.2, 1),
 "update": 0,
 "values": [Vector2(0, 256), Vector2(0, 128)]
@@ -558,8 +573,20 @@ tracks/4/path = NodePath("Continue:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0, 1.0333333, 1.5),
 "transitions": PackedFloat32Array(1, 0.2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.5000001),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
@@ -596,6 +623,8 @@ grow_vertical = 2
 layout_mode = 0
 offset_top = -128.0
 offset_right = 1280.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("3_wl5ax")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
@@ -645,6 +674,15 @@ patch_margin_top = 337
 patch_margin_right = 385
 patch_margin_bottom = 317
 
+[node name="Icon" type="TextureRect" parent="UpgradeScreen/Upgrade1" unique_id=1545371861]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 128.0
+texture = ExtResource("6_pa1oa")
+expand_mode = 1
+
 [node name="Upgrade2" type="Button" parent="UpgradeScreen" unique_id=744741203]
 layout_mode = 0
 offset_left = 512.0
@@ -689,12 +727,21 @@ patch_margin_top = 337
 patch_margin_right = 385
 patch_margin_bottom = 317
 
+[node name="Icon" type="TextureRect" parent="UpgradeScreen/Upgrade2" unique_id=1564113319]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 128.0
+texture = ExtResource("6_pa1oa")
+expand_mode = 1
+
 [node name="Upgrade3" type="Button" parent="UpgradeScreen" unique_id=1725857559]
 layout_mode = 0
 offset_left = 832.0
 offset_top = 192.0
 offset_right = 1088.0001
-offset_bottom = 575.9999
+offset_bottom = 575.99994
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -733,6 +780,15 @@ patch_margin_top = 337
 patch_margin_right = 385
 patch_margin_bottom = 317
 
+[node name="Icon" type="TextureRect" parent="UpgradeScreen/Upgrade3" unique_id=338238788]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 128.0
+texture = ExtResource("6_pa1oa")
+expand_mode = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UpgradeScreen" unique_id=1416311210]
 libraries/ = SubResource("AnimationLibrary_vkava")
 
@@ -761,19 +817,29 @@ grow_vertical = 2
 layout_mode = 0
 offset_top = 256.0
 offset_right = 1280.0
-offset_bottom = 384.0002
+offset_bottom = 384.00012
 theme_override_fonts/normal_font = ExtResource("3_wl5ax")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center][shake]Game Over"
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="GameOver" unique_id=1207419049]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1280.0
+offset_bottom = 384.00018
+theme_override_fonts/normal_font = ExtResource("3_wl5ax")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]royalties text"
+
 [node name="Continue" type="Button" parent="GameOver" unique_id=1928078559]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 512.0
-offset_top = 384.0
+offset_top = 448.0
 offset_right = 768.0
-offset_bottom = 512.0
+offset_bottom = 576.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0.9490196, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -809,6 +875,8 @@ patch_margin_bottom = 317
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver" unique_id=173335261]
 libraries/ = SubResource("AnimationLibrary_gycre")
+
+[node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_gycre")]
 
 [connection signal="pressed" from="UpgradeScreen/Upgrade1" to="UpgradeScreen" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="UpgradeScreen/Upgrade2" to="UpgradeScreen" method="_on_upgrade_2_pressed"]
