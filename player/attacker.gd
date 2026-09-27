@@ -13,6 +13,7 @@ func _physics_process(delta: float) -> void:
 	
 	#Firing
 	if Input.is_action_pressed("game_fire") and current_attack_cooldown<=0:
+		$Fire.play()
 		var bullet = attack.instantiate()
 		bullet.global_position = self.global_position
 		bullet.rotation = self.rotation

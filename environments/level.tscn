@@ -18,6 +18,11 @@ y_sort_enabled = true
 ui = NodePath("../UI")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1496290031]
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Player" unique_id=1504265687]
+current = true
 
 [node name="Trees" type="Node2D" parent="." unique_id=1561230347]
 y_sort_enabled = true

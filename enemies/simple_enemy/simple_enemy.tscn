@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://gkht70holbha" path="res://enemies/simple_enemy/simple_enemy.gd" id="1_xnvhp"]
 [ext_resource type="Texture2D" uid="uid://b8dfen5y1krg8" path="res://enemies/simple_enemy/farmer_spritesheet.png" id="2_xnvhp"]
+[ext_resource type="AudioStream" uid="uid://bdcsnjac2vkkt" path="res://enemies/enemy_hit.wav" id="3_4h2kp"]
+[ext_resource type="AudioStream" uid="uid://bswo2pv1oykwm" path="res://enemies/enemy_hit_2.wav" id="4_ubp53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hg43l"]
 radius = 24.0
@@ -416,3 +418,13 @@ parameters/TimeScale/scale = 1.0
 
 [node name="HurtAnim" type="AnimationPlayer" parent="." unique_id=259551785]
 libraries/ = SubResource("AnimationLibrary_l4g3i")
+
+[node name="hit1" type="AudioStreamPlayer2D" parent="." unique_id=646049528]
+stream = ExtResource("3_4h2kp")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="hit2" type="AudioStreamPlayer2D" parent="." unique_id=797949428]
+stream = ExtResource("4_ubp53")
+volume_db = -10.0
+bus = &"SFX"

@@ -3,6 +3,7 @@ extends CharacterBody2D
 var health : float = 1.0
 var speed = 5000.0
 var upgrade = preload("uid://disdjs3wyk2s6")
+var death_effect = preload("uid://bqnddhd58gt27")
 
 func _ready() -> void:
 	pass
@@ -11,13 +12,23 @@ func hurt(damage:float):
 	health-=damage
 	$HurtAnim.stop()
 	$HurtAnim.play("Hurt")
+	var sfx_rand = randi_range(0,1)
+	var pitch = randf_range(-0.2,0.2)
+	if sfx_rand==0:
+		$hit1.play()
+		$hit1.pitch_scale=1+pitch
+	if sfx_rand==1:
+		$hit2.play()
+		$hit2.pitch_scale=1+pitch
 	if health<=0:
 		var rand = randi_range(1,GlobalController.upgrade_chance)
 		if rand==GlobalController.upgrade_chance:
 			var upg = upgrade.instantiate()
 			upg.global_position=self.global_position
 			get_parent().call_deferred("add_child",upg)
-			
+		var de = death_effect.instantiate()
+		de.global_position = self.global_position
+		get_parent().add_child(de)
 		queue_free()
 
 func _physics_process(delta: float) -> void:
