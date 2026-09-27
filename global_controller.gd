@@ -2,7 +2,7 @@ extends Node
 
 var player : Player
 
-var upgrade_chance : int = 18
+var upgrade_chance : int = 15
 
 var enemy_spawn_time : Vector2 = Vector2(5,15) #Default 2, 15
 

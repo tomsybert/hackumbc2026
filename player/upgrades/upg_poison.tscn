@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://xm202ur7sd1g"]
+
+[ext_resource type="Script" uid="uid://bxs4rndjwpnku" path="res://player/upgrades/upg_poison.gd" id="1_5hdlr"]
+
+[node name="UpgPoison" type="Node" unique_id=1492497406]
+script = ExtResource("1_5hdlr")

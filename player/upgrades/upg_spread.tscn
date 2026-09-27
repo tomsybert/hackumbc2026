@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqsnmnybrkoam"]
+
+[ext_resource type="Script" uid="uid://ixrr1q0n47rd" path="res://player/upgrades/upg_spread.gd" id="1_vtbvx"]
+
+[node name="UpgSpread" type="Node" unique_id=1885510523]
+script = ExtResource("1_vtbvx")

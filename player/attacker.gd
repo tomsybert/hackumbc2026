@@ -6,6 +6,9 @@ var current_attack_cooldown : float = 0
 var bullet_speed : float = 300
 var damage : float = 0.1
 var bullet_size : float = 0.8
+var spread : float = 0
+var poison_time : float = 0
+var freeze : float = 0
 
 func _physics_process(delta: float) -> void:
 	#Aiming
@@ -21,7 +24,10 @@ func _physics_process(delta: float) -> void:
 		bullet.damage=damage
 		bullet.scale.x=bullet_size
 		bullet.scale.y=bullet_size
+		bullet.poison_time=poison_time
+		bullet.freeze=freeze
 		current_attack_cooldown=attack_cooldown
+		bullet.rotation+=randf_range(-1*spread,spread)
 		$"..".get_parent().add_child(bullet)
 	if current_attack_cooldown>0:
 		current_attack_cooldown-=delta

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://cw7i6oq1jovcj"]
+
+[ext_resource type="Script" uid="uid://cruma248f6uul" path="res://attacks/fire_explosion.gd" id="1_daxn8"]
+[ext_resource type="Texture2D" uid="uid://fmigxjy0wura" path="res://player/fire.png" id="2_5hrc1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvser"]
+radius = 128.24976
+
+[sub_resource type="Animation" id="Animation_7xiu8"]
+resource_name = "Blast"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6jwlb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfylo"]
+_data = {
+&"Blast": SubResource("Animation_7xiu8"),
+&"RESET": SubResource("Animation_6jwlb")
+}
+
+[sub_resource type="Gradient" id="Gradient_5hrc1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="FireExplosion" type="Node2D" unique_id=481969834]
+script = ExtResource("1_daxn8")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=988300053]
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=551927151]
+shape = SubResource("CircleShape2D_xvser")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1981852535]
+libraries/ = SubResource("AnimationLibrary_lfylo")
+autoplay = &"Blast"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1567781792]
+emitting = false
+amount = 32
+texture = ExtResource("2_5hrc1")
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 64.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color = Color(0.827451, 0.39607844, 0, 1)
+color_ramp = SubResource("Gradient_5hrc1")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
