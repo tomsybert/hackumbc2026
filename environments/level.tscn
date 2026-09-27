@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c2xaqmxr7u5py" path="res://environments/castle.tscn" id="6_uqs87"]
 [ext_resource type="PackedScene" uid="uid://c6ja8m5ul0bed" path="res://environments/bush.tscn" id="7_eb0c7"]
 [ext_resource type="PackedScene" uid="uid://joeck5ecqln5" path="res://environments/grass.tscn" id="8_jdiad"]
+[ext_resource type="PackedScene" uid="uid://bobys07e4k68a" path="res://enemies/simple_enemy/simple_enemy.tscn" id="7_xk8d6"]
 
 [node name="Level" type="Node2D" unique_id=125674357]
 
@@ -356,3 +357,8 @@ position = Vector2(-702, 576)
 
 [node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
 player = NodePath("../Player")
+[node name="SimpleEnemy" parent="." unique_id=1902833144 instance=ExtResource("7_xk8d6")]
+position = Vector2(576, -320)
+
+[node name="SimpleEnemy2" parent="." unique_id=1449789212 instance=ExtResource("7_xk8d6")]
+position = Vector2(-576, 312)
