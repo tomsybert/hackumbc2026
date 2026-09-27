@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://disdjs3wyk2s6"]
 
 [ext_resource type="Script" uid="uid://nm6l67eb06ml" path="res://player/upgrades/upgrade_pickup.gd" id="1_rmo8j"]
-[ext_resource type="AudioStream" uid="uid://bojkkr63rq5xu" path="res://player/upgrades/upgrade_chose_1.wav" id="3_mm024"]
 [ext_resource type="Texture2D" uid="uid://ng7haisq80t5" path="res://player/upgrades/diamond.png" id="2_57reg"]
+[ext_resource type="AudioStream" uid="uid://bojkkr63rq5xu" path="res://player/upgrades/upgrade_chose_1.wav" id="3_mm024"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ebpu"]
+bg_color = Color(0, 0, 0, 0.19607843)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eb0c7"]
 radius = 22.0
@@ -11,10 +18,55 @@ height = 84.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_57reg"]
 radius = 28.0
 
+[sub_resource type="Animation" id="Animation_1ebpu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mm024"]
+resource_name = "shine"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.0000002, 4, 5.0000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0.5882353, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.5882353, 0, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxaim"]
+_data = {
+&"RESET": SubResource("Animation_1ebpu"),
+&"shine": SubResource("Animation_mm024")
+}
+
 [node name="UpgradePickup" type="StaticBody2D" unique_id=176196583]
 collision_layer = 0
 collision_mask = 10
 script = ExtResource("1_rmo8j")
+
+[node name="Shadow" type="Panel" parent="." unique_id=717301976]
+offset_left = -16.0
+offset_top = 24.0
+offset_right = 16.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ebpu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=230331003]
 position = Vector2(-2.3841858e-06, -2.3841858e-06)
@@ -34,5 +86,9 @@ stream = ExtResource("3_mm024")
 volume_db = -5.0
 autoplay = true
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=987650540]
+libraries/ = SubResource("AnimationLibrary_kxaim")
+autoplay = &"shine"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
