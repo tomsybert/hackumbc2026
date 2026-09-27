@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://2rsdtkailmad" path="res://player/upgrades/upgrade_manager.gd" id="4_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqhl4"]
-size = Vector2(128, 64)
+size = Vector2(96, 96)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqhl4"]
 radius = 40.0
@@ -238,7 +238,7 @@ tracks/2/keys = {
 "values": [Vector2(48, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_yllr7"]
+[sub_resource type="Animation" id="Animation_8t03j"]
 resource_name = "FlyRightDown"
 length = 0.39999999999999997
 loop_mode = 1
@@ -279,7 +279,7 @@ tracks/2/keys = {
 "values": [Vector2(24, 48)]
 }
 
-[sub_resource type="Animation" id="Animation_8t03j"]
+[sub_resource type="Animation" id="Animation_2ieo8"]
 resource_name = "FlyRightUp"
 length = 0.39999999999999997
 loop_mode = 1
@@ -320,7 +320,7 @@ tracks/2/keys = {
 "values": [Vector2(24, -8)]
 }
 
-[sub_resource type="Animation" id="Animation_2ieo8"]
+[sub_resource type="Animation" id="Animation_ebec5"]
 resource_name = "FlyUp"
 length = 0.39999999999999997
 loop_mode = 1
@@ -361,7 +361,7 @@ tracks/2/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ebec5"]
+[sub_resource type="Animation" id="Animation_yllr7"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -400,69 +400,69 @@ tracks/2/keys = {
 "values": [Vector2(0, 40)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6k8r"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb6p2"]
 _data = {
 &"FlyDown": SubResource("Animation_qjkh3"),
 &"FlyLeft": SubResource("Animation_g6k8r"),
 &"FlyLeftDown": SubResource("Animation_boad6"),
 &"FlyLeftUp": SubResource("Animation_rgyib"),
 &"FlyRight": SubResource("Animation_hg6s5"),
-&"FlyRightDown": SubResource("Animation_yllr7"),
-&"FlyRightUp": SubResource("Animation_8t03j"),
-&"FlyUp": SubResource("Animation_2ieo8"),
-&"RESET": SubResource("Animation_ebec5")
+&"FlyRightDown": SubResource("Animation_8t03j"),
+&"FlyRightUp": SubResource("Animation_2ieo8"),
+&"FlyUp": SubResource("Animation_ebec5"),
+&"RESET": SubResource("Animation_yllr7")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yw30f"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l4g3i"]
 animation = &"FlyUp"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qjkh3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a04lo"]
 animation = &"FlyRight"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g6k8r"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4h2kp"]
 animation = &"FlyDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_boad6"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ubp53"]
 animation = &"FlyLeft"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rgyib"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kmfq4"]
 animation = &"FlyRightUp"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hg6s5"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uabys"]
 animation = &"FlyLeftUp"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8t03j"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g3ci0"]
 animation = &"FlyLeftDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ieo8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xin84"]
 animation = &"FlyRightDown"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ebec5"]
 min_space = Vector2(-1.1, -1.1)
 max_space = Vector2(1.1, 1.1)
 blend_mode = 1
-blend_point_0/node = SubResource("AnimationNodeAnimation_yw30f")
+blend_point_0/node = SubResource("AnimationNodeAnimation_l4g3i")
 blend_point_0/pos = Vector2(0, -1.1)
 blend_point_0/name = &"FlyUp"
-blend_point_1/node = SubResource("AnimationNodeAnimation_qjkh3")
+blend_point_1/node = SubResource("AnimationNodeAnimation_a04lo")
 blend_point_1/pos = Vector2(1, 0)
 blend_point_1/name = &"FlyRight"
-blend_point_2/node = SubResource("AnimationNodeAnimation_g6k8r")
+blend_point_2/node = SubResource("AnimationNodeAnimation_4h2kp")
 blend_point_2/pos = Vector2(0, 1.1)
 blend_point_2/name = &"FlyDown"
-blend_point_3/node = SubResource("AnimationNodeAnimation_boad6")
+blend_point_3/node = SubResource("AnimationNodeAnimation_ubp53")
 blend_point_3/pos = Vector2(-1, 0)
 blend_point_3/name = &"FlyLeft"
-blend_point_4/node = SubResource("AnimationNodeAnimation_rgyib")
+blend_point_4/node = SubResource("AnimationNodeAnimation_kmfq4")
 blend_point_4/pos = Vector2(0.75, -0.7)
 blend_point_4/name = &"FlyRightUp"
-blend_point_5/node = SubResource("AnimationNodeAnimation_hg6s5")
+blend_point_5/node = SubResource("AnimationNodeAnimation_uabys")
 blend_point_5/pos = Vector2(-0.75, -0.75)
 blend_point_5/name = &"FlyLeftUp"
-blend_point_6/node = SubResource("AnimationNodeAnimation_8t03j")
+blend_point_6/node = SubResource("AnimationNodeAnimation_g3ci0")
 blend_point_6/pos = Vector2(-0.75, 0.75)
 blend_point_6/name = &"FlyLeftDown"
-blend_point_7/node = SubResource("AnimationNodeAnimation_2ieo8")
+blend_point_7/node = SubResource("AnimationNodeAnimation_xin84")
 blend_point_7/pos = Vector2(0.75, 0.75)
 blend_point_7/name = &"FlyRightDown"
 
@@ -490,7 +490,6 @@ vframes = 3
 frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469720684]
-visible = false
 shape = SubResource("RectangleShape2D_jqhl4")
 
 [node name="Attacker" type="Node2D" parent="." unique_id=1867637124]
@@ -501,7 +500,6 @@ script = ExtResource("3_g1dw6")
 script = ExtResource("4_yw30f")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1583767803]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -512,7 +510,7 @@ shape = SubResource("CircleShape2D_jqhl4")
 libraries/ = SubResource("AnimationLibrary_qjkh3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=869863428]
-libraries/ = SubResource("AnimationLibrary_g6k8r")
+libraries/ = SubResource("AnimationLibrary_kb6p2")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1368292872]
 tree_root = SubResource("AnimationNodeBlendTree_boad6")

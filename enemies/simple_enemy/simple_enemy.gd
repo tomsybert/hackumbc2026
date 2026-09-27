@@ -18,8 +18,10 @@ func hurt(damage:float):
 			
 		queue_free()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if GlobalController.player:
 		velocity = position.direction_to(GlobalController.player.position) * speed * delta
+	
+	$AnimationTree.set("parameters/BlendSpace2D/blend_position",speed*position.direction_to(GlobalController.player.position))
 	
 	move_and_slide()
