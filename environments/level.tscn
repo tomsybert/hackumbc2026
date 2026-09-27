@@ -363,8 +363,7 @@ position = Vector2(-702, 576)
 [node name="UI" parent="." unique_id=1649795704 node_paths=PackedStringArray("player") instance=ExtResource("3_qerkk")]
 player = NodePath("../Player")
 
-[node name="HUD" parent="." unique_id=1998963175 node_paths=PackedStringArray("player") instance=ExtResource("9_to5s0")]
-player = NodePath("../Player")
+[node name="HUD" parent="." unique_id=1998963175 instance=ExtResource("9_to5s0")]
 
 [node name="SimpleEnemy" parent="." unique_id=1902833144 instance=ExtResource("7_xk8d6")]
 position = Vector2(576, -320)

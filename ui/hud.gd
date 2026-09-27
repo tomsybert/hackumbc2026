@@ -16,8 +16,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if prev_life != player.life:
-		for i in prev_life:
-			heart_container.get_child(0).queue_free()
+		for i in heart_container.get_children():
+			i.queue_free()
 		for i in player.life:
 			var heart_piece = heart.instantiate()
 			heart_container.add_child(heart_piece)
