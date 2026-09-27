@@ -7,6 +7,7 @@ var upgrade = preload("uid://disdjs3wyk2s6")
 var death_effect = preload("uid://bqnddhd58gt27")
 
 func _ready() -> void:
+	speed = GlobalController.enemy_speed
 	maxSpeed = speed
 
 func hurt(damage:float):
@@ -22,11 +23,12 @@ func hurt(damage:float):
 		$hit2.play()
 		$hit2.pitch_scale=1+pitch
 	if health<=0:
-		var rand = randi_range(1,GlobalController.upgrade_chance)
-		if rand==GlobalController.upgrade_chance:
+		GlobalController.upgrade_amnt+=1
+		if GlobalController.upgrade_amnt==GlobalController.upgrade_target:
 			var upg = upgrade.instantiate()
 			upg.global_position=self.global_position
 			get_parent().call_deferred("add_child",upg)
+			GlobalController.reroll_upgrade()
 		var de = death_effect.instantiate()
 		de.global_position = self.global_position
 		get_parent().add_child(de)

@@ -10,6 +10,7 @@ var visible_characters = 0.0
 var text_speed = 40
 
 var text_done : bool = false
+var finished=false
 
 var textbox_array = [
 	"After years of being cast in the biggest fantasy movies...",
@@ -30,20 +31,20 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	
-	if Input.is_action_just_pressed("game_fire") and visible_characters >= textbox_array[textbox_index].length():
-		textbox_index += 1
-		visible_characters = 0.0
-		text_done = false
-		if textbox_index == 1:
-			bg_anim.play("transition_1")
-		elif textbox_index == 2:
-			bg_anim.play("transition_2")
-	
-	if Input.is_action_just_pressed("game_fire") and visible_characters < textbox_array[textbox_index].length() and visible_characters != 0.0:
-		text_done = true
-		visible_characters = textbox_array[textbox_index].length()
-		advance_texture.visible = true
+	if !finished:
+		if Input.is_action_just_pressed("game_fire") and visible_characters >= textbox_array[textbox_index].length():
+			textbox_index += 1
+			visible_characters = 0.0
+			text_done = false
+			if textbox_index == 1:
+				bg_anim.play("transition_1")
+			elif textbox_index == 2:
+				bg_anim.play("transition_2")
+		
+		if Input.is_action_just_pressed("game_fire") and visible_characters < textbox_array[textbox_index].length() and visible_characters != 0.0:
+			text_done = true
+			visible_characters = textbox_array[textbox_index].length()
+			advance_texture.visible = true
 		
 	
 	if textbox_index > textbox_array.size() - 1:
@@ -60,7 +61,8 @@ func _process(delta: float) -> void:
 		advance_texture.visible = true
 	
 	if textbox_index > textbox_array.size() - 2:
-		get_tree().change_scene_to_file("uid://bd2y6a1kfxa8g")
+		finished=true
+		$Transitioner.start_transit("uid://bd2y6a1kfxa8g")
 	
 	textbox.visible_characters = visible_characters
 	textbox.text = textbox_array[textbox_index]

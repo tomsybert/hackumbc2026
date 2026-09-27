@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.82753307, 0.39422724, 0, 1)]
+"values": [Color(0.827451, 0.12156863, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_s3udu"]
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.82753307, 0.39422724, 0, 1), Color(0.827451, 0.39607844, 0, 0)]
+"values": [Color(0.827, 0.122, 0, 1), Color(0.827451, 0.39607844, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -61,7 +61,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_olv06")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1675686325]
-modulate = Color(0.82753307, 0.39422724, 0, 1)
+modulate = Color(0.827451, 0.12156863, 0, 1)
 position = Vector2(-7.1525574e-07, -7.1525574e-07)
 rotation = -1.5707964
 scale = Vector2(0.13499999, 0.13499999)
