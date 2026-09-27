@@ -24,8 +24,7 @@ func game_over():
 
 
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("uid://b0maylxmgq4k1")
-  $Transitioner.start_transit("uid://b0maylxmgq4k1")
+	$Transitioner.start_transit("uid://b0maylxmgq4k1")
 
 
 func _unhandled_input(event: InputEvent) -> void:
