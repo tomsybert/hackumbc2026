@@ -10,7 +10,8 @@ var text_speed = 40
 
 var textbox_array = [
 	"This is text box number 1!",
-	"This is the second textbox, numero dos! dos!dos!dos!dos!dos!dos!dos!dos!dos!dos!dos!"
+	"This is the second textbox, numero dos! dos!dos!dos!dos!dos!dos!dos!dos!dos!dos!dos!",
+	""
 ]
 var textbox_index = 0
 
@@ -24,7 +25,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("game_fire"):
+	if Input.is_action_just_pressed("game_fire") and visible_characters >= textbox_array[textbox_index].length():
 		textbox_index += 1
 		visible_characters = 0.0
 	
@@ -40,6 +41,9 @@ func _process(delta: float) -> void:
 			audio_player.play()
 	else:
 		advance_texture.visible = true
+	
+	if textbox_index > textbox_array.size() - 2:
+		get_tree().change_scene_to_file("res://environments/level.tscn")
 	
 	textbox.visible_characters = visible_characters
 	textbox.text = textbox_array[textbox_index]
