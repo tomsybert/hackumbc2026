@@ -876,9 +876,23 @@ patch_margin_bottom = 317
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver" unique_id=173335261]
 libraries/ = SubResource("AnimationLibrary_gycre")
 
+[node name="QuittingLabel" type="RichTextLabel" parent="." unique_id=967518113]
+offset_left = 21.0
+offset_top = 4.0
+offset_right = 219.0
+offset_bottom = 71.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("3_wl5ax")
+theme_override_font_sizes/normal_font_size = 32
+text = "Quitting..."
+scroll_active = false
+
+[node name="QuittingTimer" type="Timer" parent="." unique_id=1508228904]
+one_shot = true
 [node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("8_gycre")]
 
 [connection signal="pressed" from="UpgradeScreen/Upgrade1" to="UpgradeScreen" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="UpgradeScreen/Upgrade2" to="UpgradeScreen" method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="UpgradeScreen/Upgrade3" to="UpgradeScreen" method="_on_upgrade_3_pressed"]
 [connection signal="pressed" from="GameOver/Continue" to="." method="_on_continue_pressed"]
+[connection signal="timeout" from="QuittingTimer" to="." method="_on_quitting_timer_timeout"]
