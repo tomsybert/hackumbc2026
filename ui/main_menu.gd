@@ -5,6 +5,8 @@ extends Control
 
 func _ready():
 	get_tree().paused=false
+	$music_slider.value = AudioServer.get_bus_volume_linear(music_bus)
+	$sfx_slider.value = AudioServer.get_bus_volume_linear(sfx_bus)
 
 func _on_button_pressed() -> void:
 	$Transitioner.start_transit("uid://dvc2vbqbor6dt")

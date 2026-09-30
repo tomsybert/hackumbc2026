@@ -36,6 +36,10 @@ func hurt(damage:float):
 		GlobalController.player.score += randf_range(5.01, 15.99)
 
 func _physics_process(delta: float) -> void:
+	#WARNING This may cause problems if I add the confusion buff or want them to run away
+	if speed<=0:
+		speed=0
+		
 	if GlobalController.player:
 		velocity = position.direction_to(GlobalController.player.position) * speed * delta
 	

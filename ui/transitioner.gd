@@ -2,6 +2,9 @@ extends Control
 
 var path : String
 
+func _ready():
+	visible=true
+
 func start_transit(p:String):
 	path=p
 	$AnimationPlayer.play("FadeIn")
