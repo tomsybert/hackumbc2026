@@ -1,5 +1,7 @@
 extends Node
 
+var bonus : bool = true
+
 var player : Player
 
 var upgrade_chance : Vector2i = Vector2i(10,20)

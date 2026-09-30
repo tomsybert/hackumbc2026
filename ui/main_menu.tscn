@@ -8,7 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://c6mqi3f0xxkm4" path="res://ui/transitioner.tscn" id="6_ei257"]
 [ext_resource type="Theme" uid="uid://rxsiiwhsd8xp" path="res://slider_theme.tres" id="6_ubpvv"]
 [ext_resource type="Texture2D" uid="uid://beglmj7ijqn8v" path="res://ui/bar_comp.png" id="7_p8ri8"]
+[ext_resource type="Texture2D" uid="uid://binxmcfjgivdi" path="res://util/check_yes.png" id="8_lsdqh"]
 [ext_resource type="AudioStream" uid="uid://btqgpjrty835v" path="res://main_menu.mp3" id="9_arv2f"]
+[ext_resource type="Texture2D" uid="uid://dhrq1o6bcljef" path="res://util/check_no.png" id="9_jiymt"]
+
+[sub_resource type="Theme" id="Theme_arv2f"]
+CheckButton/icons/checked = ExtResource("8_lsdqh")
+CheckButton/icons/unchecked = ExtResource("9_jiymt")
 
 [node name="MainMenu" type="Control" unique_id=185032467]
 layout_mode = 3
@@ -95,9 +101,9 @@ patch_margin_bottom = 317
 [node name="music_slider" type="HSlider" parent="." unique_id=1109596181]
 layout_mode = 0
 offset_left = 968.0
-offset_top = 448.0
+offset_top = 400.0
 offset_right = 1245.0
-offset_bottom = 597.0
+offset_bottom = 549.0
 theme = ExtResource("6_ubpvv")
 max_value = 1.5
 step = 0.1
@@ -128,9 +134,9 @@ vertical_alignment = 1
 [node name="sfx_slider" type="HSlider" parent="." unique_id=1368090834]
 layout_mode = 0
 offset_left = 968.0
-offset_top = 592.0
+offset_top = 528.0
 offset_right = 1245.0
-offset_bottom = 741.0
+offset_bottom = 677.0
 theme = ExtResource("6_ubpvv")
 max_value = 1.5
 step = 0.1
@@ -158,6 +164,20 @@ text = "[tornado radius=3]SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1265538011]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 616.0
+offset_right = 1275.0
+offset_bottom = 712.0
+theme = SubResource("Theme_arv2f")
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_t7e0r")
+theme_override_font_sizes/font_size = 32
+button_pressed = true
+text = "Bonus Content (On)"
+alignment = 2
+
 [node name="Transitioner" parent="." unique_id=387291391 instance=ExtResource("6_ei257")]
 visible = false
 layout_mode = 1
@@ -171,3 +191,4 @@ parameters/looping = true
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="sfx_slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
