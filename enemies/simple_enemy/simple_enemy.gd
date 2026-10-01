@@ -11,7 +11,8 @@ func _ready() -> void:
 	maxSpeed = speed
 
 func freeze():
-	$Visuals.modulate = Color(0.462, 0.839, 1.0)
+	if GlobalController.bonus:
+		$Visuals.modulate = Color(0.462, 0.839, 1.0)
 
 func hurt(damage:float):
 	health-=damage
@@ -53,7 +54,8 @@ func _physics_process(delta: float) -> void:
 func poison(time:float):
 	$PoisonCounter.wait_time=time
 	$PoisonCounter.start()
-	modulate = Color(0.816, 0.486, 1.0)
+	if GlobalController.bonus:
+		modulate = Color(0.816, 0.486, 1.0)
 
 func _on_poison_counter_timeout() -> void:
 	hurt(0.5)
