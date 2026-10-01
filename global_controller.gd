@@ -22,6 +22,10 @@ func restart():
 	enemy_hp = Vector2(1,1)
 	upgrade_amnt=0
 	upgrade_target = 2
+	if bonus:
+		upgrade_chance = Vector2i(10,20) #TODO Change this to 5,15 if I add more upgrades
+	else:
+		upgrade_chance = Vector2i(10,20)
 
 func reroll_upgrade():
 	upgrade_amnt = 0
