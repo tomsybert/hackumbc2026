@@ -3,6 +3,8 @@ class_name Hud
 
 @onready var heart = preload("uid://cagsli5fg8xe5")
 @onready var heart_container = $Hearts/HeartContainer
+@onready var extended_heart_container = $Hearts/ExtendedHeartContainer
+@onready var extended_heart_container_label = $Hearts/ExtendedHeartContainer/HeartLabel
 @onready var money_counter = $MoneyCounter/MoneyLabel
 #@export var player : CharacterBody2D
 var prev_life : int
@@ -17,15 +19,23 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if prev_life != GlobalController.player.life:
-		for i in heart_container.get_children():
-			i.queue_free()
-		for i in GlobalController.player.life:
+	if GlobalController.player.life >= 10:
+		heart_container.visible = false
+		extended_heart_container.visible = true
+		extended_heart_container_label.text = str(GlobalController.player.life)
+	else:
+		heart_container.visible = true
+		extended_heart_container.visible = false
+		if GlobalController.player.life < prev_life:
+			heart_container.get_child(0).queue_free()
+		elif GlobalController.player.life > prev_life:
 			var heart_piece = heart.instantiate()
 			heart_container.add_child(heart_piece)
-		prev_life = GlobalController.player.life
+	
+	prev_life = GlobalController.player.life
 	score = GlobalController.player.score
 	money_counter.text = "[tornado]$" + str(snappedf(score, 0.01))
+
 
 func game_over():
 	$MoneyCounter.visible=false

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6fpugtwpfg07"]
 
 [ext_resource type="Script" uid="uid://c1nok2qhvfn13" path="res://ui/hud.gd" id="1_rbyyf"]
+[ext_resource type="PackedScene" uid="uid://cagsli5fg8xe5" path="res://ui/heart.tscn" id="2_546lt"]
 [ext_resource type="FontFile" uid="uid://bk1uuvjou7e1b" path="res://util/darumadropone/DarumadropOne-Regular.ttf" id="3_spcu4"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1649795704]
@@ -19,6 +20,28 @@ offset_top = 8.0
 offset_right = 316.0
 offset_bottom = 316.0
 columns = 3
+
+[node name="ExtendedHeartContainer" type="Control" parent="Hearts" unique_id=1665402782]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 412.0
+offset_bottom = 108.0
+
+[node name="Heart" parent="Hearts/ExtendedHeartContainer" unique_id=769869812 instance=ExtResource("2_546lt")]
+layout_mode = 0
+
+[node name="HeartLabel" type="RichTextLabel" parent="Hearts/ExtendedHeartContainer" unique_id=1532635628]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 64.0
+offset_right = 364.0
+offset_bottom = 100.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("3_spcu4")
+theme_override_font_sizes/normal_font_size = 64
+text = "10"
+scroll_active = false
 
 [node name="MoneyCounter" type="Control" parent="." unique_id=1328799638]
 layout_mode = 3
